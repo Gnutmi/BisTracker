@@ -99,26 +99,26 @@ td{padding:5px 6px;border-bottom:1px solid rgba(55,55,75,0.15)}
    ITEM DATABASES
    ════════════════════════════════════════ */
 const TRINKETS={
-  "Gaze of the Alnseer":{id:254199,src:"Chimaerus (Dreamrift)"},
-  "Light Company Guidon":{id:254194,src:"Imperator Averzian (Voidspire)"},
-  "Heart of Wind":{id:254803,src:"Windrunner Spire"},
+  "Gaze of the Alnseer":{id:249343,src:"Chimaerus (Dreamrift)"},
+  "Light Company Guidon":{id:249344,src:"Imperator Averzian (Voidspire)"},
+  "Heart of Wind":{id:250256,src:"Windrunner Spire"},
   "Algethar Puzzle Box":{id:193701,src:"Algeth'ar Academy"},
-  "Volatile Void Suffuser":{id:254196,src:"Fallen-King Salhadaar (Voidspire)"},
-  "Gloom-Spattered Dreadscale":{id:254193,src:"Vaelgor & Ezzorak (Voidspire)"},
-  "Solar Core Igniter":{id:254802,src:"Skyreach"},
-  "Resonant Bellowstone":{id:254801,src:"Dungeon Drop"},
-  "Heart of Ancient Hunger":{id:254800,src:"Dungeon Drop"},
-  "Umbreal Plume":{id:254197,src:"Voidspire"},
-  "Radiant Plume":{id:254198,src:"Voidspire"},
-  "Idol of the War Loa":{id:254804,src:"Dungeon Drop"},
-  "Vessel of Tortured Souls":{id:254805,src:"Dungeon Drop"},
-  "Seed of the Devouring Wild":{id:254806,src:"Dungeon Drop"},
-  "Sapling of the Dawnroot":{id:254807,src:"Dungeon Drop"},
-  "Mark of Light":{id:254808,src:"Dungeon Drop"},
-  "Solarflare Prism":{id:254809,src:"Skyreach"},
-  "Kroluk's Warbanner":{id:254810,src:"Dungeon Drop"},
+  "Volatile Void Suffuser":{id:249341,src:"Fallen-King Salhadaar (Voidspire)"},
+  "Gloom-Spattered Dreadscale":{id:249339,src:"Vaelgor & Ezzorak (Voidspire)"},
+  "Solar Core Igniter":{id:252418,src:"Skyreach"},
+  "Resonant Bellowstone":{id:null,src:"Dungeon Drop"},
+  "Heart of Ancient Hunger":{id:249342,src:"Dungeon Drop"},
+  "Umbral Plume":{id:260235,src:"Voidspire"},
+  "Radiant Plume":{id:249806,src:"Voidspire"},
+  "Idol of the War Loa":{id:250229,src:"Dungeon Drop"},
+  "Vessel of Tortured Souls":{id:250258,src:"Dungeon Drop"},
+  "Seed of the Devouring Wild":{id:250238,src:"Dungeon Drop"},
+  "Sapling of the Dawnroot":{id:250259,src:"Dungeon Drop"},
+  "Mark of Light":{id:250241,src:"Dungeon Drop"},
+  "Solarflare Prism":{id:252420,src:"Skyreach"},
+  "Kroluk's Warbanner":{id:250227,src:"Dungeon Drop"},
 };
-const WEAPONS={"Bellamy's Final Judgement":254170,"Blade of the Final Twilight":254171};
+const WEAPONS={"Bellamy's Final Judgement":249277,"Blade of the Final Twilight":249281};
 const TIER_IDS={
   "Death Knight":{H:249970,Sh:249968,Ch:249973,Gl:249971,Le:249969},
   "Demon Hunter":{H:250033,Sh:250031,Ch:250036,Gl:250034,Le:250032},
@@ -163,6 +163,7 @@ function weaponLink(w){
 /* ════════════════════════════════════════
    ALL 40 SPECS
    CHANGELOG (most recent first):
+   2026-03-07 — Corrected all weapon & trinket Wowhead IDs from beta 254xxx range to live IDs; fixed Umbreal→Umbral spelling
    2026-03-07 — Initial data (pre-season, Voidspire opens March 17)
    ════════════════════════════════════════ */
 const DATA_VERSION="2026-03-07";
@@ -201,7 +202,7 @@ const SPECS=[
      "Death Strike deals 8% increased damage, 10% chance for Blood Boil charge.", // 2pc
      "Blood Boil +15% damage, grants Bone Shield stack.",                          // 4pc
      c("Weapon"),                                                                   // BiS weapon
-     {name:"Bellamy's Final Judgement",id:254170},                                 // alt weapon
+     {name:"Bellamy's Final Judgement",id:249277},                                 // alt weapon
      [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Gloom-Spattered Dreadscale",r:"BiS 2"}], // trinkets
      ["Solar Core Igniter","Sapling of the Dawnroot"]                              // alt trinkets
   ),
@@ -209,8 +210,8 @@ const SPECS=[
      DK,["Head","Chest","Hands","Legs"],"Shoulders",
      "Empower Rune Weapon: next Obliterate/Frostscythe +20%.",                    // 2pc
      "Empower Rune Weapon recharges 20% faster. Pillar of Frost +1 charge.",      // 4pc
-     {name:"Bellamy's Final Judgement",id:254170},                                 // BiS weapon
-     {name:"Blade of the Final Twilight",id:254171},                               // alt weapon
+     {name:"Bellamy's Final Judgement",id:249277},                                 // BiS weapon
+     {name:"Blade of the Final Twilight",id:249281},                               // alt weapon
      [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Light Company Guidon",r:"BiS 2"}], // trinkets
      ["Algethar Puzzle Box","Heart of Ancient Hunger"]                             // alt trinkets
   ),
@@ -219,9 +220,9 @@ const SPECS=[
      "Dread Plague +25%. Virulent Plague +25%.",                                   // 2pc
      "Putrefy +20%, next Scourge Strike costs no Rune.",                           // 4pc
      c("2H"),                                                                       // BiS weapon
-     {name:"Bellamy's Final Judgement",id:254170},                                 // alt weapon
+     {name:"Bellamy's Final Judgement",id:249277},                                 // alt weapon
      [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Light Company Guidon",r:"BiS 2"}], // trinkets
-     ["Umbreal Plume","Heart of Ancient Hunger","Algethar Puzzle Box"]             // alt trinkets
+     ["Umbral Plume","Heart of Ancient Hunger","Algethar Puzzle Box"]              // alt trinkets
   ),
 
 // ─────────────────────────────────────────────────────────────
@@ -232,7 +233,7 @@ const SPECS=[
      "Eye Beam deals 15% increased damage.",                                        // 2pc
      "Fracture: 30% chance for Fire AoE detonation.",                              // 4pc
      c("Glaives"),                                                                  // BiS weapon
-     {name:"Blade of the Final Twilight",id:254171},                               // alt weapon
+     {name:"Blade of the Final Twilight",id:249281},                               // alt weapon
      [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}],   // trinkets
      ["Light Company Guidon","Algethar Puzzle Box"]                                // alt trinkets
   ),
@@ -241,7 +242,7 @@ const SPECS=[
      "Fracture: 30% chance for Fire AoE detonation.",                              // 2pc
      "Fracture detonations reduce Fiery Brand CD by 2 sec.",                       // 4pc
      c("Glaives"),                                                                  // BiS weapon
-     {name:"Blade of the Final Twilight",id:254171},                               // alt weapon
+     {name:"Blade of the Final Twilight",id:249281},                               // alt weapon
      [{name:"Gloom-Spattered Dreadscale",r:"BiS 1"},{name:"Solar Core Igniter",r:"BiS 2"}], // trinkets
      ["Gaze of the Alnseer","Seed of the Devouring Wild"]                          // alt trinkets
   ),
@@ -250,7 +251,7 @@ const SPECS=[
      "Devourer void consumption abilities deal 15% more damage.",                  // 2pc
      "Consuming void energy: chance for secondary void eruption.",                  // 4pc
      c("Glaives"),                                                                  // BiS weapon
-     {name:"Blade of the Final Twilight",id:254171},                               // alt weapon
+     {name:"Blade of the Final Twilight",id:249281},                               // alt weapon
      [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}],   // trinkets
      ["Algethar Puzzle Box","Volatile Void Suffuser"]                              // alt trinkets
   ),
@@ -445,7 +446,7 @@ const SPECS=[
      "Templar's Verdict / Final Verdict +10%.",                                    // 2pc
      "TV applies Expurgation at 50%; Divine Storm at 25%.",                        // 4pc
      c("2H Sword"),                                                                 // BiS weapon
-     {name:"Bellamy's Final Judgement",id:254170},                                 // alt weapon
+     {name:"Bellamy's Final Judgement",id:249277},                                 // alt weapon
      [{name:"Resonant Bellowstone",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}],  // trinkets
      ["Idol of the War Loa","Vessel of Tortured Souls"]                            // alt trinkets
   ),
@@ -582,7 +583,7 @@ const SPECS=[
      "Mortal Strike/Cleave +5%. Colossus Smash: +5% dmg taken.",                  // 2pc
      "MS/Cleave (3+) extends Colossus Smash by 1 sec.",                            // 4pc
      c("2H"),                                                                       // BiS weapon
-     {name:"Bellamy's Final Judgement",id:254170},                                 // alt weapon
+     {name:"Bellamy's Final Judgement",id:249277},                                 // alt weapon
      [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Light Company Guidon",r:"BiS 2"}], // trinkets
      ["Heart of Wind","Algethar Puzzle Box"]                                       // alt trinkets
   ),
