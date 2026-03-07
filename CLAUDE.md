@@ -1,213 +1,126 @@
-# CLAUDE.md — BisTracker
-
-This file provides guidance for AI assistants (Claude and others) working in this repository. Keep it up to date as the project evolves.
-
----
+# CLAUDE.md — WoW Midnight Season 1 Raid BiS Reference Tool
 
 ## Project Overview
 
-**BisTracker** is a tracking application hosted at [Gnutmi/BisTracker](http://local_proxy@127.0.0.1:46455/git/Gnutmi/BisTracker).
+This is an interactive **Best-in-Slot gear reference** for all 40 specializations in World of Warcraft: Midnight (patch 12.0.1, Season 1). It is a single standalone HTML file (`midnight-bis-reference.html`) that opens in any browser with no build tools or dependencies required.
 
-> This repository is in its initial state. Update this section with a description of BisTracker's purpose, target users, and core functionality once the project is defined.
+## What It Does
 
----
+- Lists all **40 specs** across 13 classes (including the new Devourer Demon Hunter spec)
+- For each spec shows:
+  - **Tier set pieces** (5 slots: Head, Shoulders, Chest, Hands, Legs) with the 4 pieces to equip and 1 to skip
+  - **2-piece and 4-piece set bonuses**
+  - **BiS weapon** and alternative weapon
+  - **BiS trinket 1 & 2** and alternative trinkets
+- All items with known Wowhead item IDs are **hyperlinked to Wowhead** and show **hover tooltips** via the Wowhead tooltip script
+- Supports **filtering** by class (dropdown), role (buttons: Tank/Healer/Melee DPS/Ranged DPS), and free-text search
+- Click any spec row to expand/collapse the detailed view
+- Dark void-themed UI with WoW class colors
 
-## Repository Structure
+## Architecture
 
+**Single-file HTML** — everything is in one file:
+- `<style>` block: All CSS (dark theme, grid layout, responsive)
+- `<script>` block: All data + rendering logic in vanilla JavaScript
+- Wowhead tooltip integration via external script: `https://wow.zamimg.com/js/tooltips.js`
+
+**No framework dependencies.** Pure vanilla JS with innerHTML-based rendering. A `render()` function rebuilds the spec list whenever filters change or a row is toggled. After each render, `$WowheadPower.refreshLinks()` is called to activate tooltips on new DOM nodes.
+
+## Key Data Structures
+
+### `SPECS` array
+Each spec is an object created via `mk()` helper:
 ```
-BisTracker/
-├── CLAUDE.md          # This file — AI assistant guidance
-└── .git/              # Git metadata
-```
-
-> As source files are added, document the layout here. Common patterns to follow:
-> - `src/` or `app/` — application source code
-> - `tests/` or `__tests__/` — test files
-> - `docs/` — documentation
-> - `scripts/` — utility/build scripts
-> - `config/` — environment and configuration files
-
----
-
-## Technology Stack
-
-> Document the chosen stack here once decided. Examples:
-> - **Language**: Python / TypeScript / Go / Rust
-> - **Framework**: FastAPI / Next.js / Gin / Axum
-> - **Database**: PostgreSQL / SQLite / MongoDB
-> - **ORM/Query layer**: SQLAlchemy / Prisma / GORM
-> - **Frontend** (if any): React / Vue / HTMX
-
----
-
-## Development Setup
-
-### Prerequisites
-
-> List required tools, runtimes, and versions (e.g., Node ≥ 20, Python ≥ 3.11, Docker).
-
-### Install Dependencies
-
-```bash
-# Example — replace with actual commands
-npm install          # Node.js
-pip install -r requirements.txt  # Python
-cargo build          # Rust
-```
-
-### Environment Variables
-
-> Document all required environment variables. Never commit secrets. Use a `.env.example` file as a template.
-
-```bash
-cp .env.example .env
-# then edit .env with your local values
+{
+  class: "Death Knight",
+  spec: "Frost",
+  role: "Melee DPS",       // "Tank" | "Healer" | "Melee DPS" | "Ranged DPS"
+  armor: "Plate",           // "Cloth" | "Leather" | "Mail" | "Plate"
+  tierSet: "Relentless Rider's Lament",
+  tierSlots: {              // 5 tier piece slots, each with name + stats
+    Head: { name: "...", stats: "Haste / Mastery" },
+    Shoulders: { ... }, Chest: { ... }, Hands: { ... }, Legs: { ... }
+  },
+  tierUsed: ["Head","Chest","Hands","Legs"],  // which 4 to equip
+  tierSkipped: "Shoulders",                    // which 1 to skip
+  tier2pc: "...",           // 2-piece bonus description
+  tier4pc: "...",           // 4-piece bonus description
+  bisWeapon: { name: "...", id: 254170 },     // id = Wowhead item ID or null
+  altWeapon: { name: "...", id: null },
+  trinkets: [
+    { name: "Gaze of the Alnseer", r: "BiS 1" },
+    { name: "Light Company Guidon", r: "BiS 2" }
+  ],
+  altTrinkets: ["Heart of Wind", "Algethar Puzzle Box"]
+}
 ```
 
-| Variable | Description | Required |
-|---|---|---|
-| `DATABASE_URL` | Connection string for the database | Yes |
-| `SECRET_KEY` | Application secret key | Yes |
+### `TRINKETS` object
+Maps trinket names → `{ id: wowheadItemId, src: "drop source" }`. Used for generating Wowhead links and source labels.
 
-### Running the Application
+### `TIER_IDS` object
+Maps class name → `{ H: itemId, Sh: itemId, Ch: itemId, Gl: itemId, Le: itemId }` for tier piece Wowhead links.
 
-```bash
-# Example — replace with actual commands
-npm run dev          # Development server
-python main.py       # Python entry point
-cargo run            # Rust binary
+### `WEAPONS` object
+Maps notable weapon names → Wowhead item IDs.
+
+### `CC` object
+WoW class colors (hex) keyed by class name.
+
+## Data Sources & Accuracy
+
+Data was scraped/compiled from:
+- **Wowhead Beta** (tier set item IDs, item names, stats)
+- **Method.gg** class guides (trinket rankings, weapon recommendations, tier set bonuses)
+- **Maxroll.gg** (tier set bonus text)
+- **Icy Veins** (spec list, BiS structure)
+- Various community sources (Overgear, BlazingBoost, BoostMatch)
+
+**Important caveats:**
+- Voidspire raid opened **March 17, 2026** — many recommendations were pre-season/theoretical at time of creation
+- Some Wowhead item IDs (especially trinkets) may need verification as the live database stabilizes
+- Tier piece "skip" recommendations are generalized — actual skip depends on available non-tier alternatives at your item level
+- Trinket rankings will shift as tuning happens — **Gaze of the Alnseer** was widely regarded as overtuned
+- Always recommend users sim on Raidbots for personalized results
+
+## Known Issues / Areas to Improve
+
+1. **Item ID accuracy**: Some trinket IDs (254xxx range) were from beta datamining and may have changed on live. Verify against live Wowhead and update the `TRINKETS` object.
+2. **Missing specific weapon drops**: Most specs list "Crafted w/ Darkmoon Sigil: Hunt" as BiS weapon. Specific raid weapon drops per spec could be added (e.g., which boss drops which weapon type).
+3. **Tier skip may vary**: The "skip" piece is a general recommendation. Some specs may prefer different skip slots depending on available M+ or crafted alternatives. Consider making this configurable or adding notes.
+4. **Mobile responsiveness**: The collapsed row uses flexbox wrapping which works okay on mobile but could be improved. The expanded detail grid switches to single-column below 800px.
+5. **No Mythic+ BiS**: This is raid-only. A separate M+ column or toggle could be added.
+6. **Healer trinkets**: Healer trinket meta is less settled than DPS. Consider adding more nuanced notes for healing specs.
+7. **Embellishments**: Not currently tracked. Could add a "Best Embellishments" field per spec (most use Darkmoon Sigil: Hunt + Arcanoweave Lining).
+8. **Sort options**: Could add sorting by class, role, or alphabetical spec name.
+
+## How to Modify
+
+### Adding/updating a spec's data
+Find the spec in the `SPECS` array (they're ordered by class alphabetically). Each is a `mk()` call with positional arguments:
+```
+mk(class, spec, role, armor, tierSetName, tierSlotObject, usedArray, skipSlot, tier2pcText, tier4pcText, bisWeaponObj, altWeaponObj, trinketsArray, altTrinketsArray)
 ```
 
----
-
-## Testing
-
-> Update with the actual test framework and commands once established.
-
-```bash
-# Run all tests
-npm test
-pytest
-cargo test
-
-# Run with coverage
-npm run test:coverage
-pytest --cov=src
-cargo tarpaulin
+### Adding a new trinket
+Add to the `TRINKETS` object at the top of the script:
+```js
+"New Trinket Name": { id: 123456, src: "Boss Name (Raid)" },
 ```
+Then reference by exact name string in spec trinket arrays.
 
-### Testing Conventions
+### Updating a Wowhead item ID
+- Tier pieces: Update `TIER_IDS["ClassName"]` object
+- Trinkets: Update `TRINKETS["Trinket Name"].id`
+- Weapons: Update `WEAPONS["Weapon Name"]` value
 
-- Write tests for all new features and bug fixes.
-- Keep unit tests isolated; mock external services.
-- Integration tests live in a separate directory from unit tests.
-- Aim for meaningful coverage over high coverage numbers.
+### Styling
+All CSS is in the `<style>` block at the top. Key classes:
+- `.row` / `.row.open` — spec row container
+- `.detail-grid` — the two-column expanded layout
+- `.tr1` / `.tr2` — trinket box accent colors
+- `.wep-val` — weapon box styling
 
----
+## File
 
-## Build & Deployment
-
-```bash
-# Example build commands — replace with actual
-npm run build
-docker build -t bistracker .
-```
-
-> Document CI/CD pipelines, deployment targets, and release process here.
-
----
-
-## Code Style & Conventions
-
-### General
-
-- Prefer clarity over cleverness.
-- Keep functions small and single-purpose.
-- Avoid over-engineering: only build what is currently needed.
-- Delete dead code rather than commenting it out.
-
-### Naming
-
-- Use descriptive, intention-revealing names.
-- Follow the naming conventions of the chosen language (e.g., `snake_case` for Python, `camelCase` for JS/TS, `PascalCase` for types/classes).
-
-### Comments
-
-- Add comments only where the logic is non-obvious.
-- Do not add comments that merely restate what the code does.
-- Prefer self-documenting code over excessive comments.
-
-### Error Handling
-
-- Handle errors at system boundaries (user input, external APIs, file I/O).
-- Do not silently swallow errors.
-- Provide actionable error messages.
-
-### Linting & Formatting
-
-> Document the chosen linters and formatters once added (e.g., ESLint + Prettier, Ruff + Black, `rustfmt`). Run them before committing.
-
----
-
-## Git Workflow
-
-### Branches
-
-- `main` — stable, production-ready code
-- `claude/` prefix — branches used by AI assistants
-- Feature branches: `feature/<short-description>`
-- Bug fix branches: `fix/<short-description>`
-
-### Commit Messages
-
-Use concise, imperative-mood commit messages:
-
-```
-Add user authentication module
-Fix pagination bug in tracker list view
-Refactor database connection pooling
-```
-
-- First line: ≤ 72 characters, imperative mood
-- Add a blank line then a longer description if needed
-- Reference issue numbers where applicable: `Closes #42`
-
-### Pull Requests
-
-- Keep PRs focused on a single concern.
-- Include a description of what changed and why.
-- Ensure tests pass before requesting review.
-- Do not force-push to shared branches.
-
----
-
-## AI Assistant Guidelines
-
-When working in this repository as an AI assistant:
-
-1. **Read before editing** — always read the relevant files before making changes.
-2. **Minimal changes** — only change what is necessary to fulfill the request. Do not refactor surrounding code unless asked.
-3. **No unnecessary files** — do not create new files unless they are clearly required.
-4. **No over-engineering** — avoid premature abstractions, feature flags, or backwards-compatibility shims.
-5. **Security first** — never introduce SQL injection, XSS, command injection, or other OWASP vulnerabilities.
-6. **Test your changes** — run the test suite after changes and fix any failures before committing.
-7. **Commit clearly** — write descriptive commit messages explaining the *why*, not just the *what*.
-8. **Branch discipline** — develop on the designated `claude/` branch; never push to `main` without explicit permission.
-9. **Confirm destructive actions** — ask before deleting files, dropping database tables, or force-pushing.
-10. **Keep CLAUDE.md current** — update this file whenever significant architectural decisions are made.
-
----
-
-## Known Issues & TODOs
-
-> Track outstanding issues and decisions here, or link to the issue tracker.
-
-- [ ] Define project scope and technology stack
-- [ ] Add initial application skeleton
-- [ ] Set up CI/CD pipeline
-- [ ] Add linting and formatting configuration
-- [ ] Write initial test suite
-
----
-
-*Last updated: 2026-03-07. This file was auto-generated from an empty repository state and should be updated as the project grows.*
+- `midnight-bis-reference.html` — the complete standalone app (single file, ~35KB)
