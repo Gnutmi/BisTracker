@@ -85,31 +85,14 @@ Data was scraped/compiled from:
 
 ## Known Issues / Areas to Improve
 
-### High Priority — Data Correctness
-
-1. **Item ID accuracy**: All trinket IDs in the 254xxx range were from beta datamining and may have changed on live. Verify each against live Wowhead (post March 17) and update the `TRINKETS` object.
-3. **Trinket name accuracy**: Verify `"Gaze of the Alnseer"` spelling against the live Wowhead item name — if wrong, update both the `TRINKETS` key and every spec reference to it.
-4. **Sparse `WEAPONS` object**: Only two weapons have Wowhead IDs (`Bellamy's Final Judgement`, `Blade of the Final Twilight`). Every other spec uses `r()` (no ID), so alt weapon links have no tooltip. Add IDs for all raid weapon drops once live Wowhead is stable.
-5. **Tier skip may vary**: The "skip" piece is a general recommendation. Some specs may prefer different skip slots depending on available M+ or crafted alternatives. Consider adding per-spec notes.
-
-### Medium Priority — UX Improvements
-
-6. **Search is too narrow**: `getFiltered()` only matches class, spec name, and tier set name. Extend it to also search trinket names and weapon names so users can e.g. search "Gaze" to find specs that use it.
-7. **No armor-type filter**: The spec data already has an `armor` field (`Cloth`/`Leather`/`Mail`/`Plate`) but there is no UI filter for it. Add a dropdown or button group alongside the existing role buttons.
-8. **Stale warning banner**: The "Voidspire opens March 17" warning is hardcoded. After that date it should be updated or removed — consider keying it off a `const RAID_OPEN = new Date("2026-03-17")` check.
-9. **No expand-all / collapse-all**: Only one row can be open at a time. An "Expand All" button would let users compare specs side-by-side.
-10. **Role filter state doesn't reset on class change**: Switching the class dropdown while a role button is active can leave the button highlighted even if no results match. Cosmetic but confusing.
-
-### Lower Priority — Nice-to-Have
-
-11. **Embellishments**: Not currently tracked. Could add a "Best Embellishments" field per spec (most use Darkmoon Sigil: Hunt + Arcanoweave Lining).
-12. **No Mythic+ BiS**: This is raid-only. A separate M+ column or toggle could be added.
-13. **Sort options**: Could add sorting by class, role, or alphabetical spec name.
-14. **Copy-to-clipboard**: A button on each expanded row to copy the spec's full item list as plain text would be handy for Discord/spreadsheet use.
-15. **URL deep-linking**: The URL doesn't reflect open spec or active filters. Adding `#class-spec` hash support would let users share direct links.
-16. **Healer trinkets**: Healer trinket meta is less settled than DPS. Consider adding more nuanced notes for healing specs.
-17. **Mobile responsiveness**: The collapsed row uses flexbox wrapping which works okay on mobile but could be improved. The expanded detail grid switches to single-column below 800px.
-18. **Print stylesheet**: Adding `@media print` styles would make the page usable as a printed reference sheet.
+1. **Item ID accuracy**: Some trinket IDs (254xxx range) were from beta datamining and may have changed on live. Verify against live Wowhead and update the `TRINKETS` object.
+2. **Missing specific weapon drops**: Most specs list "Crafted w/ Darkmoon Sigil: Hunt" as BiS weapon. Specific raid weapon drops per spec could be added (e.g., which boss drops which weapon type).
+3. **Tier skip may vary**: The "skip" piece is a general recommendation. Some specs may prefer different skip slots depending on available M+ or crafted alternatives. Consider making this configurable or adding notes.
+4. **Mobile responsiveness**: The collapsed row uses flexbox wrapping which works okay on mobile but could be improved. The expanded detail grid switches to single-column below 800px.
+5. **No Mythic+ BiS**: This is raid-only. A separate M+ column or toggle could be added.
+6. **Healer trinkets**: Healer trinket meta is less settled than DPS. Consider adding more nuanced notes for healing specs.
+7. **Embellishments**: Not currently tracked. Could add a "Best Embellishments" field per spec (most use Darkmoon Sigil: Hunt + Arcanoweave Lining).
+8. **Sort options**: Could add sorting by class, role, or alphabetical spec name.
 
 ## How to Modify
 
