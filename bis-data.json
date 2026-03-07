@@ -1,0 +1,697 @@
+{
+  "dataVersion": "2026-03-07",
+  "trinkets": {
+    "Gaze of the Alnseer": { "id": 249343, "src": "Chimaerus (Dreamrift)" },
+    "Light Company Guidon": { "id": 249344, "src": "Imperator Averzian (Voidspire)" },
+    "Heart of Wind": { "id": 250256, "src": "Windrunner Spire" },
+    "Algethar Puzzle Box": { "id": 193701, "src": "Algeth'ar Academy" },
+    "Volatile Void Suffuser": { "id": 249341, "src": "Fallen-King Salhadaar (Voidspire)" },
+    "Gloom-Spattered Dreadscale": { "id": 249339, "src": "Vaelgor & Ezzorak (Voidspire)" },
+    "Solar Core Igniter": { "id": 252418, "src": "Skyreach" },
+    "Resonant Bellowstone": { "id": null, "src": "Dungeon Drop" },
+    "Heart of Ancient Hunger": { "id": 249342, "src": "Dungeon Drop" },
+    "Umbral Plume": { "id": 260235, "src": "Voidspire" },
+    "Radiant Plume": { "id": 249806, "src": "Voidspire" },
+    "Idol of the War Loa": { "id": 250229, "src": "Dungeon Drop" },
+    "Vessel of Tortured Souls": { "id": 250258, "src": "Dungeon Drop" },
+    "Seed of the Devouring Wild": { "id": 250238, "src": "Dungeon Drop" },
+    "Sapling of the Dawnroot": { "id": 250259, "src": "Dungeon Drop" },
+    "Mark of Light": { "id": 250241, "src": "Dungeon Drop" },
+    "Solarflare Prism": { "id": 252420, "src": "Skyreach" },
+    "Kroluk's Warbanner": { "id": 250227, "src": "Dungeon Drop" }
+  },
+  "weapons": {
+    "Bellamy's Final Judgement": 249277,
+    "Blade of the Final Twilight": 249281
+  },
+  "tierIds": {
+    "Death Knight": { "H": 249970, "Sh": 249968, "Ch": 249973, "Gl": 249971, "Le": 249969 },
+    "Demon Hunter": { "H": 250033, "Sh": 250031, "Ch": 250036, "Gl": 250034, "Le": 250032 },
+    "Druid": { "H": 250024, "Sh": 250022, "Ch": 250027, "Gl": 250025, "Le": 250023 },
+    "Evoker": { "H": 249997, "Sh": 249995, "Ch": 250000, "Gl": 249998, "Le": 249996 },
+    "Hunter": { "H": 249988, "Sh": 249986, "Ch": 249991, "Gl": 249989, "Le": 249987 },
+    "Mage": { "H": 250060, "Sh": 250058, "Ch": 250063, "Gl": 250061, "Le": 250059 },
+    "Monk": { "H": 250015, "Sh": 250013, "Ch": 250018, "Gl": 250016, "Le": 250014 },
+    "Paladin": { "H": 249961, "Sh": 249959, "Ch": 249964, "Gl": 249962, "Le": 249960 },
+    "Priest": { "H": 250051, "Sh": 250049, "Ch": 250054, "Gl": 250052, "Le": 250050 },
+    "Rogue": { "H": 250006, "Sh": 250004, "Ch": 250009, "Gl": 250007, "Le": 250005 },
+    "Shaman": { "H": 250042, "Sh": 250040, "Ch": 250045, "Gl": 250043, "Le": 250041 },
+    "Warlock": { "H": 250069, "Sh": 250067, "Ch": 250072, "Gl": 250070, "Le": 250068 },
+    "Warrior": { "H": 249952, "Sh": 249950, "Ch": 249955, "Gl": 249953, "Le": 249951 }
+  },
+  "tierSlots": {
+    "Death Knight": {
+      "Head": { "name": "Relentless Rider's Crown", "stats": "Haste / Mastery" },
+      "Shoulders": { "name": "Relentless Rider's Dreadthorns", "stats": "Haste / Vers" },
+      "Chest": { "name": "Relentless Rider's Cuirass", "stats": "Crit / Haste" },
+      "Hands": { "name": "Relentless Rider's Bonegrasps", "stats": "Haste / Mastery" },
+      "Legs": { "name": "Relentless Rider's Legguards", "stats": "Crit / Mastery" }
+    },
+    "Demon Hunter": {
+      "Head": { "name": "Devouring Reaver's Intake", "stats": "Haste / Mastery" },
+      "Shoulders": { "name": "Devouring Reaver's Exhaustplates", "stats": "Crit / Mastery" },
+      "Chest": { "name": "Devouring Reaver's Engine", "stats": "Crit / Mastery" },
+      "Hands": { "name": "Devouring Reaver's Essence Grips", "stats": "Crit / Haste" },
+      "Legs": { "name": "Devouring Reaver's Pistons", "stats": "Haste / Vers" }
+    },
+    "Druid": {
+      "Head": { "name": "Branches of the Luminous Bloom", "stats": "Haste / Mastery" },
+      "Shoulders": { "name": "Seedpods of the Luminous Bloom", "stats": "Crit / Mastery" },
+      "Chest": { "name": "Trunk of the Luminous Bloom", "stats": "Crit / Mastery" },
+      "Hands": { "name": "Arbortenders of the Luminous Bloom", "stats": "Haste / Vers" },
+      "Legs": { "name": "Phloemwraps of the Luminous Bloom", "stats": "Haste / Mastery" }
+    },
+    "Evoker": {
+      "Head": { "name": "Hornhelm of the Black Talon", "stats": "Crit / Mastery" },
+      "Shoulders": { "name": "Beacons of the Black Talon", "stats": "Crit / Mastery" },
+      "Chest": { "name": "Frenzyward of the Black Talon", "stats": "Crit / Haste" },
+      "Hands": { "name": "Enforcer's Grips of the Black Talon", "stats": "Haste / Vers" },
+      "Legs": { "name": "Greaves of the Black Talon", "stats": "Haste / Mastery" }
+    },
+    "Hunter": {
+      "Head": { "name": "Primal Sentry's Maw", "stats": "Crit / Haste" },
+      "Shoulders": { "name": "Primal Sentry's Trophies", "stats": "Haste / Vers" },
+      "Chest": { "name": "Primal Sentry's Scaleplate", "stats": "Crit / Haste" },
+      "Hands": { "name": "Primal Sentry's Talonguards", "stats": "Crit / Mastery" },
+      "Legs": { "name": "Primal Sentry's Legguards", "stats": "Crit / Mastery" }
+    },
+    "Mage": {
+      "Head": { "name": "Voidbreaker's Veil", "stats": "Haste / Mastery" },
+      "Shoulders": { "name": "Voidbreaker's Leyline Nexi", "stats": "Haste / Vers" },
+      "Chest": { "name": "Voidbreaker's Robe", "stats": "Crit / Haste" },
+      "Hands": { "name": "Voidbreaker's Gloves", "stats": "Haste / Mastery" },
+      "Legs": { "name": "Voidbreaker's Britches", "stats": "Crit / Haste" }
+    },
+    "Monk": {
+      "Head": { "name": "Fearsome Visage of Ra-den's Chosen", "stats": "Crit / Haste" },
+      "Shoulders": { "name": "Aurastones of Ra-den's Chosen", "stats": "Haste / Mastery" },
+      "Chest": { "name": "Battle Garb of Ra-den's Chosen", "stats": "Crit / Haste" },
+      "Hands": { "name": "Thunderfists of Ra-den's Chosen", "stats": "Crit / Vers" },
+      "Legs": { "name": "Swiftsweepers of Ra-den's Chosen", "stats": "Haste / Mastery" }
+    },
+    "Paladin": {
+      "Head": { "name": "Luminant Verdict's Unwavering Gaze", "stats": "Haste / Mastery" },
+      "Shoulders": { "name": "Luminant Verdict's Providence Watch", "stats": "Crit / Mastery" },
+      "Chest": { "name": "Luminant Verdict's Divine Warplate", "stats": "Haste / Mastery" },
+      "Hands": { "name": "Luminant Verdict's Gauntlets", "stats": "Haste / Vers" },
+      "Legs": { "name": "Luminant Verdict's Greaves", "stats": "Crit / Haste" }
+    },
+    "Priest": {
+      "Head": { "name": "Blind Oath's Winged Crest", "stats": "Crit / Haste" },
+      "Shoulders": { "name": "Blind Oath's Seraphguards", "stats": "Crit / Mastery" },
+      "Chest": { "name": "Blind Oath's Raiment", "stats": "Haste / Mastery" },
+      "Hands": { "name": "Blind Oath's Touch", "stats": "Haste / Vers" },
+      "Legs": { "name": "Blind Oath's Leggings", "stats": "Haste / Mastery" }
+    },
+    "Rogue": {
+      "Head": { "name": "Masquerade of the Grim Jest", "stats": "Vers / Mastery" },
+      "Shoulders": { "name": "Shoulderpads of the Grim Jest", "stats": "Crit / Haste" },
+      "Chest": { "name": "Vest of the Grim Jest", "stats": "Crit / Vers" },
+      "Hands": { "name": "Handguards of the Grim Jest", "stats": "Haste / Mastery" },
+      "Legs": { "name": "Leggings of the Grim Jest", "stats": "Crit / Haste" }
+    },
+    "Shaman": {
+      "Head": { "name": "Helm of the Primal Core", "stats": "Crit / Haste" },
+      "Shoulders": { "name": "Pauldrons of the Primal Core", "stats": "Haste / Mastery" },
+      "Chest": { "name": "Chestguard of the Primal Core", "stats": "Crit / Mastery" },
+      "Hands": { "name": "Grips of the Primal Core", "stats": "Crit / Haste" },
+      "Legs": { "name": "Legguards of the Primal Core", "stats": "Haste / Mastery" }
+    },
+    "Warlock": {
+      "Head": { "name": "Crown of the Abyssal Immolator", "stats": "Haste / Mastery" },
+      "Shoulders": { "name": "Pauldrons of the Abyssal Immolator", "stats": "Crit / Haste" },
+      "Chest": { "name": "Robe of the Abyssal Immolator", "stats": "Crit / Mastery" },
+      "Hands": { "name": "Gloves of the Abyssal Immolator", "stats": "Haste / Vers" },
+      "Legs": { "name": "Leggings of the Abyssal Immolator", "stats": "Crit / Haste" }
+    },
+    "Warrior": {
+      "Head": { "name": "Night Ender's Helm", "stats": "Crit / Mastery" },
+      "Shoulders": { "name": "Night Ender's Shoulderplates", "stats": "Haste / Vers" },
+      "Chest": { "name": "Night Ender's Breastplate", "stats": "Crit / Haste" },
+      "Hands": { "name": "Night Ender's Gauntlets", "stats": "Crit / Mastery" },
+      "Legs": { "name": "Night Ender's Legguards", "stats": "Haste / Mastery" }
+    }
+  },
+  "specs": [
+    {
+      "class": "Death Knight", "spec": "Blood", "role": "Tank", "armor": "Plate",
+      "tierSet": "Relentless Rider's Lament",
+      "tierUsed": ["Head", "Chest", "Hands", "Legs"], "tierSkipped": "Shoulders",
+      "tier2pc": "Death Strike deals 8% increased damage, 10% chance for Blood Boil charge.",
+      "tier4pc": "Blood Boil +15% damage, grants Bone Shield stack.",
+      "bisWeapon": { "name": "Crafted Weapon w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Bellamy's Final Judgement", "id": 249277 },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Gloom-Spattered Dreadscale", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Solar Core Igniter", "Sapling of the Dawnroot"]
+    },
+    {
+      "class": "Death Knight", "spec": "Frost", "role": "Melee DPS", "armor": "Plate",
+      "tierSet": "Relentless Rider's Lament",
+      "tierUsed": ["Head", "Chest", "Hands", "Legs"], "tierSkipped": "Shoulders",
+      "tier2pc": "Empower Rune Weapon: next Obliterate/Frostscythe +20%.",
+      "tier4pc": "Empower Rune Weapon recharges 20% faster. Pillar of Frost +1 charge.",
+      "bisWeapon": { "name": "Bellamy's Final Judgement", "id": 249277 },
+      "altWeapon": { "name": "Blade of the Final Twilight", "id": 249281 },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Light Company Guidon", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Algethar Puzzle Box", "Heart of Ancient Hunger"]
+    },
+    {
+      "class": "Death Knight", "spec": "Unholy", "role": "Melee DPS", "armor": "Plate",
+      "tierSet": "Relentless Rider's Lament",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Dread Plague +25%. Virulent Plague +25%.",
+      "tier4pc": "Putrefy +20%, next Scourge Strike costs no Rune.",
+      "bisWeapon": { "name": "Crafted 2H w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Bellamy's Final Judgement", "id": 249277 },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Light Company Guidon", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Umbral Plume", "Heart of Ancient Hunger", "Algethar Puzzle Box"]
+    },
+    {
+      "class": "Demon Hunter", "spec": "Havoc", "role": "Melee DPS", "armor": "Leather",
+      "tierSet": "Devouring Reaver's Sheathe",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Hands"], "tierSkipped": "Legs",
+      "tier2pc": "Eye Beam deals 15% increased damage.",
+      "tier4pc": "Fracture: 30% chance for Fire AoE detonation.",
+      "bisWeapon": { "name": "Crafted Glaives w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Blade of the Final Twilight", "id": 249281 },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Light Company Guidon", "Algethar Puzzle Box"]
+    },
+    {
+      "class": "Demon Hunter", "spec": "Vengeance", "role": "Tank", "armor": "Leather",
+      "tierSet": "Devouring Reaver's Sheathe",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Hands"], "tierSkipped": "Legs",
+      "tier2pc": "Fracture: 30% chance for Fire AoE detonation.",
+      "tier4pc": "Fracture detonations reduce Fiery Brand CD by 2 sec.",
+      "bisWeapon": { "name": "Crafted Glaives w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Blade of the Final Twilight", "id": 249281 },
+      "trinkets": [
+        { "name": "Gloom-Spattered Dreadscale", "r": "BiS 1" },
+        { "name": "Solar Core Igniter", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Gaze of the Alnseer", "Seed of the Devouring Wild"]
+    },
+    {
+      "class": "Demon Hunter", "spec": "Devourer", "role": "Ranged DPS", "armor": "Leather",
+      "tierSet": "Devouring Reaver's Sheathe",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Hands"], "tierSkipped": "Legs",
+      "tier2pc": "Devourer void consumption abilities deal 15% more damage.",
+      "tier4pc": "Consuming void energy: chance for secondary void eruption.",
+      "bisWeapon": { "name": "Crafted Glaives w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Blade of the Final Twilight", "id": 249281 },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Algethar Puzzle Box", "Volatile Void Suffuser"]
+    },
+    {
+      "class": "Druid", "spec": "Balance", "role": "Ranged DPS", "armor": "Leather",
+      "tierSet": "Sprouts of the Luminous Bloom",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Starfall +15%, Starsurge +10%.",
+      "tier4pc": "Eclipse: Wrath/Starfire +10%.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Algethar Puzzle Box", "Volatile Void Suffuser"]
+    },
+    {
+      "class": "Druid", "spec": "Feral", "role": "Melee DPS", "armor": "Leather",
+      "tierSet": "Sprouts of the Luminous Bloom",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Rip +15%, Ferocious Bite +10%.",
+      "tier4pc": "Tiger's Fury grants 15% crit for 8 sec.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Light Company Guidon", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
+    },
+    {
+      "class": "Druid", "spec": "Guardian", "role": "Tank", "armor": "Leather",
+      "tierSet": "Sprouts of the Luminous Bloom",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Mangle +15%, Thrash +10%.",
+      "tier4pc": "Mangle: 20% chance to grant Rage of the Sleeper (4 sec).",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Gloom-Spattered Dreadscale", "Solar Core Igniter", "Light Company Guidon"]
+    },
+    {
+      "class": "Druid", "spec": "Restoration", "role": "Healer", "armor": "Leather",
+      "tierSet": "Sprouts of the Luminous Bloom",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Rejuvenation healing +15%.",
+      "tier4pc": "Wild Growth +20% healing on targets with Rejuvenation.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Volatile Void Suffuser", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Sapling of the Dawnroot", "Mark of Light"]
+    },
+    {
+      "class": "Evoker", "spec": "Augmentation", "role": "Ranged DPS", "armor": "Mail",
+      "tierSet": "Livery of the Black Talon",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Ebon Might duration +2 sec.",
+      "tier4pc": "Prescience grants additional 2% crit.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Algethar Puzzle Box", "Volatile Void Suffuser"]
+    },
+    {
+      "class": "Evoker", "spec": "Devastation", "role": "Ranged DPS", "armor": "Mail",
+      "tierSet": "Livery of the Black Talon",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Disintegrate and Pyre +10%.",
+      "tier4pc": "Dragonrage grants 15% damage.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Heart of Wind", "Volatile Void Suffuser"]
+    },
+    {
+      "class": "Evoker", "spec": "Preservation", "role": "Healer", "armor": "Mail",
+      "tierSet": "Livery of the Black Talon",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Dream Breath healing +20%.",
+      "tier4pc": "Reversion +15% healing on targets below 50% HP.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Volatile Void Suffuser", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Sapling of the Dawnroot", "Mark of Light"]
+    },
+    {
+      "class": "Hunter", "spec": "Beast Mastery", "role": "Ranged DPS", "armor": "Mail",
+      "tierSet": "Primal Sentry's Camouflage",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Kill Command +15%.",
+      "tier4pc": "Bestial Wrath: pet +20% damage.",
+      "bisWeapon": { "name": "Crafted Bow/Gun w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Ranged (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Algethar Puzzle Box", "Light Company Guidon"]
+    },
+    {
+      "class": "Hunter", "spec": "Marksmanship", "role": "Ranged DPS", "armor": "Mail",
+      "tierSet": "Primal Sentry's Camouflage",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Aimed Shot +10%, Rapid Fire +15%.",
+      "tier4pc": "Trueshot: +10% crit damage.",
+      "bisWeapon": { "name": "Crafted Bow/Gun w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Ranged (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Light Company Guidon", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
+    },
+    {
+      "class": "Hunter", "spec": "Survival", "role": "Ranged DPS", "armor": "Mail",
+      "tierSet": "Primal Sentry's Camouflage",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Kill Command and Raptor Strike +10%.",
+      "tier4pc": "Coordinated Assault extends 2 sec on crit.",
+      "bisWeapon": { "name": "Crafted Polearm w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Polearm (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Light Company Guidon", "Algethar Puzzle Box"]
+    },
+    {
+      "class": "Mage", "spec": "Arcane", "role": "Ranged DPS", "armor": "Cloth",
+      "tierSet": "Voidbreaker's Accordance",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Arcane Blast and Arcane Missiles +10%.",
+      "tier4pc": "Arcane Surge: +15% Intellect.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Heart of Wind", "Volatile Void Suffuser"]
+    },
+    {
+      "class": "Mage", "spec": "Fire", "role": "Ranged DPS", "armor": "Cloth",
+      "tierSet": "Voidbreaker's Accordance",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Pyroblast and Flamestrike +10%.",
+      "tier4pc": "Combustion: Fire damage +15%.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Algethar Puzzle Box", "Volatile Void Suffuser"]
+    },
+    {
+      "class": "Mage", "spec": "Frost", "role": "Ranged DPS", "armor": "Cloth",
+      "tierSet": "Voidbreaker's Accordance",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Ice Lance and Glacial Spike +10%.",
+      "tier4pc": "Icy Veins: +10% Frost damage.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Heart of Wind", "Volatile Void Suffuser"]
+    },
+    {
+      "class": "Monk", "spec": "Brewmaster", "role": "Tank", "armor": "Leather",
+      "tierSet": "Way of Ra-den's Chosen",
+      "tierUsed": ["Shoulders", "Chest", "Hands", "Legs"], "tierSkipped": "Head",
+      "tier2pc": "Keg Smash +15%, CD reduced by 1 sec.",
+      "tier4pc": "Blackout Kick: 20% chance to reset Keg Smash CD.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gloom-Spattered Dreadscale", "r": "BiS 1" },
+        { "name": "Gaze of the Alnseer", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Solar Core Igniter", "Algethar Puzzle Box"]
+    },
+    {
+      "class": "Monk", "spec": "Mistweaver", "role": "Healer", "armor": "Leather",
+      "tierSet": "Way of Ra-den's Chosen",
+      "tierUsed": ["Shoulders", "Chest", "Hands", "Legs"], "tierSkipped": "Head",
+      "tier2pc": "Vivify healing +15%.",
+      "tier4pc": "Thunder Focus Tea: next Vivify +25%.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Volatile Void Suffuser", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Sapling of the Dawnroot", "Mark of Light"]
+    },
+    {
+      "class": "Monk", "spec": "Windwalker", "role": "Melee DPS", "armor": "Leather",
+      "tierSet": "Way of Ra-den's Chosen",
+      "tierUsed": ["Shoulders", "Chest", "Hands", "Legs"], "tierSkipped": "Head",
+      "tier2pc": "Rising Sun Kick +15%.",
+      "tier4pc": "Fists of Fury: +10% damage for 8 sec.",
+      "bisWeapon": { "name": "Crafted Fist Weapons w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Fist Weapons (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Light Company Guidon", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
+    },
+    {
+      "class": "Paladin", "spec": "Holy", "role": "Healer", "armor": "Plate",
+      "tierSet": "Luminant Verdict's Vestments",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Holy Shock healing +15%.",
+      "tier4pc": "Holy Shock transfers additional healing to Beacon of Light.",
+      "bisWeapon": { "name": "Crafted 1H+Shield w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid 1H (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Volatile Void Suffuser", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Mark of Light", "Sapling of the Dawnroot"]
+    },
+    {
+      "class": "Paladin", "spec": "Protection", "role": "Tank", "armor": "Plate",
+      "tierSet": "Luminant Verdict's Vestments",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Shield of the Righteous: +10% block for 5 sec.",
+      "tier4pc": "Avenger's Shield +15%, generates 1 Holy Power.",
+      "bisWeapon": { "name": "Crafted 1H+Shield w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid 1H (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gloom-Spattered Dreadscale", "r": "BiS 1" },
+        { "name": "Seed of the Devouring Wild", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Heart of Wind", "Solar Core Igniter"]
+    },
+    {
+      "class": "Paladin", "spec": "Retribution", "role": "Melee DPS", "armor": "Plate",
+      "tierSet": "Luminant Verdict's Vestments",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Templar's Verdict / Final Verdict +10%.",
+      "tier4pc": "TV applies Expurgation at 50%; Divine Storm at 25%.",
+      "bisWeapon": { "name": "Crafted 2H Sword w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Bellamy's Final Judgement", "id": 249277 },
+      "trinkets": [
+        { "name": "Resonant Bellowstone", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Idol of the War Loa", "Vessel of Tortured Souls"]
+    },
+    {
+      "class": "Priest", "spec": "Discipline", "role": "Healer", "armor": "Cloth",
+      "tierSet": "Blind Oath's Burden",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Atonement healing +10%.",
+      "tier4pc": "Atonements from Flash Heal / Radiance last +3 sec.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Volatile Void Suffuser", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Mark of Light", "Sapling of the Dawnroot"]
+    },
+    {
+      "class": "Priest", "spec": "Holy", "role": "Healer", "armor": "Cloth",
+      "tierSet": "Blind Oath's Burden",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Prayer of Mending healing +20%.",
+      "tier4pc": "Holy Word: Serenity also applies Renew at 100%.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Volatile Void Suffuser", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Mark of Light", "Sapling of the Dawnroot"]
+    },
+    {
+      "class": "Priest", "spec": "Shadow", "role": "Ranged DPS", "armor": "Cloth",
+      "tierSet": "Blind Oath's Burden",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "SW: Madness +10%, Insanity cost \u22125.",
+      "tier4pc": "Shadowy & Void Apparitions +40%.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Heart of Wind", "Volatile Void Suffuser"]
+    },
+    {
+      "class": "Rogue", "spec": "Assassination", "role": "Melee DPS", "armor": "Leather",
+      "tierSet": "Motley of the Grim Jest",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Garrote +30%, applies poisons. Energy \u221210.",
+      "tier4pc": "Mutilate/Ambush/FoK +25% to poisoned targets.",
+      "bisWeapon": { "name": "Crafted Daggers w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Daggers (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Light Company Guidon", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
+    },
+    {
+      "class": "Rogue", "spec": "Outlaw", "role": "Melee DPS", "armor": "Leather",
+      "tierSet": "Motley of the Grim Jest",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Blade Rush +30%, primary target +25%.",
+      "tier4pc": "Blade Rush CD \u22126 sec, +5% damage for 8 sec.",
+      "bisWeapon": { "name": "Crafted 1H Swords w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid 1H Swords (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Light Company Guidon", "Algethar Puzzle Box"]
+    },
+    {
+      "class": "Rogue", "spec": "Subtlety", "role": "Melee DPS", "armor": "Leather",
+      "tierSet": "Motley of the Grim Jest",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Finishers +1.5% per combo point.",
+      "tier4pc": "Shadow Blades +4 sec, attacks deal +6% Shadow.",
+      "bisWeapon": { "name": "Crafted Daggers w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Daggers (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Light Company Guidon", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
+    },
+    {
+      "class": "Shaman", "spec": "Elemental", "role": "Ranged DPS", "armor": "Mail",
+      "tierSet": "Mantle of the Primal Core",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Haste +15% for 10 sec after Stormkeeper.",
+      "tier4pc": "Stormkeeper +1 charge. LB/CL +25%.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid 1H+Shield (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Heart of Wind", "Volatile Void Suffuser"]
+    },
+    {
+      "class": "Shaman", "spec": "Enhancement", "role": "Melee DPS", "armor": "Mail",
+      "tierSet": "Mantle of the Primal Core",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Stormstrike +15%, Lava Lash +15%.",
+      "tier4pc": "Crash Lightning enhancement: +2% Mastery.",
+      "bisWeapon": { "name": "Crafted 1H Weapons w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid 1H Weapons (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Light Company Guidon", "Algethar Puzzle Box"]
+    },
+    {
+      "class": "Shaman", "spec": "Restoration", "role": "Healer", "armor": "Mail",
+      "tierSet": "Mantle of the Primal Core",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Unleash Life CD \u22123 sec, healing doubled.",
+      "tier4pc": "Unleash Life affects additional spell at 100%.",
+      "bisWeapon": { "name": "Crafted 1H+Shield w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid 1H+Shield (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Volatile Void Suffuser", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Mark of Light", "Sapling of the Dawnroot"]
+    },
+    {
+      "class": "Warlock", "spec": "Affliction", "role": "Ranged DPS", "armor": "Cloth",
+      "tierSet": "Reign of the Abyssal Immolator",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Agony +15%, Corruption +10%.",
+      "tier4pc": "Darkglare extends all DoTs by +4 sec.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Heart of Wind", "Volatile Void Suffuser"]
+    },
+    {
+      "class": "Warlock", "spec": "Demonology", "role": "Ranged DPS", "armor": "Cloth",
+      "tierSet": "Reign of the Abyssal Immolator",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Demonbolt +15%, Hand of Gul'dan +10%.",
+      "tier4pc": "Demonic Tyrant: demon damage +15%.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Heart of Wind", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Algethar Puzzle Box", "Volatile Void Suffuser"]
+    },
+    {
+      "class": "Warlock", "spec": "Destruction", "role": "Ranged DPS", "armor": "Cloth",
+      "tierSet": "Reign of the Abyssal Immolator",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Chaos Bolt +10%, Incinerate +10%.",
+      "tier4pc": "Infernal +20% damage, +5 sec duration.",
+      "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Heart of Wind", "Volatile Void Suffuser"]
+    },
+    {
+      "class": "Warrior", "spec": "Arms", "role": "Melee DPS", "armor": "Plate",
+      "tierSet": "Rage of the Night Ender",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Mortal Strike/Cleave +5%. Colossus Smash: +5% dmg taken.",
+      "tier4pc": "MS/Cleave (3+) extends Colossus Smash by 1 sec.",
+      "bisWeapon": { "name": "Crafted 2H w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Bellamy's Final Judgement", "id": 249277 },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Light Company Guidon", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
+    },
+    {
+      "class": "Warrior", "spec": "Fury", "role": "Melee DPS", "armor": "Plate",
+      "tierSet": "Rage of the Night Ender",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Rampage +10%, Odyn's Fury +10%.",
+      "tier4pc": "Rampage reduces OF CD by 2.5 sec. OF +10%.",
+      "bisWeapon": { "name": "Crafted 2H (x2) w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid 2H Weapons (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Light Company Guidon", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
+    },
+    {
+      "class": "Warrior", "spec": "Protection", "role": "Tank", "armor": "Plate",
+      "tierSet": "Rage of the Night Ender",
+      "tierUsed": ["Head", "Shoulders", "Chest", "Legs"], "tierSkipped": "Hands",
+      "tier2pc": "Shield Slam +10%, Shield Charge +100%.",
+      "tier4pc": "Revenge/TC +10%. Shield Charge grants Revenge!.",
+      "bisWeapon": { "name": "Crafted 1H+Shield w/ Darkmoon Sigil: Hunt", "id": null },
+      "altWeapon": { "name": "Raid 1H (Voidspire)", "id": null },
+      "trinkets": [
+        { "name": "Gloom-Spattered Dreadscale", "r": "BiS 1" },
+        { "name": "Solar Core Igniter", "r": "BiS 2" }
+      ],
+      "altTrinkets": ["Gaze of the Alnseer", "Seed of the Devouring Wild"]
+    }
+  ]
+}

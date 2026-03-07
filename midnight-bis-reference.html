@@ -96,46 +96,16 @@ td{padding:5px 6px;border-bottom:1px solid rgba(55,55,75,0.15)}
 
 <script>
 /* ════════════════════════════════════════
-   ITEM DATABASES
+   ITEM DATABASES — loaded from bis-data.json
    ════════════════════════════════════════ */
-const TRINKETS={
-  "Gaze of the Alnseer":{id:249343,src:"Chimaerus (Dreamrift)"},
-  "Light Company Guidon":{id:249344,src:"Imperator Averzian (Voidspire)"},
-  "Heart of Wind":{id:250256,src:"Windrunner Spire"},
-  "Algethar Puzzle Box":{id:193701,src:"Algeth'ar Academy"},
-  "Volatile Void Suffuser":{id:249341,src:"Fallen-King Salhadaar (Voidspire)"},
-  "Gloom-Spattered Dreadscale":{id:249339,src:"Vaelgor & Ezzorak (Voidspire)"},
-  "Solar Core Igniter":{id:252418,src:"Skyreach"},
-  "Resonant Bellowstone":{id:null,src:"Dungeon Drop"},
-  "Heart of Ancient Hunger":{id:249342,src:"Dungeon Drop"},
-  "Umbral Plume":{id:260235,src:"Voidspire"},
-  "Radiant Plume":{id:249806,src:"Voidspire"},
-  "Idol of the War Loa":{id:250229,src:"Dungeon Drop"},
-  "Vessel of Tortured Souls":{id:250258,src:"Dungeon Drop"},
-  "Seed of the Devouring Wild":{id:250238,src:"Dungeon Drop"},
-  "Sapling of the Dawnroot":{id:250259,src:"Dungeon Drop"},
-  "Mark of Light":{id:250241,src:"Dungeon Drop"},
-  "Solarflare Prism":{id:252420,src:"Skyreach"},
-  "Kroluk's Warbanner":{id:250227,src:"Dungeon Drop"},
-};
-const WEAPONS={"Bellamy's Final Judgement":249277,"Blade of the Final Twilight":249281};
-const TIER_IDS={
-  "Death Knight":{H:249970,Sh:249968,Ch:249973,Gl:249971,Le:249969},
-  "Demon Hunter":{H:250033,Sh:250031,Ch:250036,Gl:250034,Le:250032},
-  "Druid":{H:250024,Sh:250022,Ch:250027,Gl:250025,Le:250023},
-  "Evoker":{H:249997,Sh:249995,Ch:250000,Gl:249998,Le:249996},
-  "Hunter":{H:249988,Sh:249986,Ch:249991,Gl:249989,Le:249987},
-  "Mage":{H:250060,Sh:250058,Ch:250063,Gl:250061,Le:250059},
-  "Monk":{H:250015,Sh:250013,Ch:250018,Gl:250016,Le:250014},
-  "Paladin":{H:249961,Sh:249959,Ch:249964,Gl:249962,Le:249960},
-  "Priest":{H:250051,Sh:250049,Ch:250054,Gl:250052,Le:250050},
-  "Rogue":{H:250006,Sh:250004,Ch:250009,Gl:250007,Le:250005},
-  "Shaman":{H:250042,Sh:250040,Ch:250045,Gl:250043,Le:250041},
-  "Warlock":{H:250069,Sh:250067,Ch:250072,Gl:250070,Le:250068},
-  "Warrior":{H:249952,Sh:249950,Ch:249955,Gl:249953,Le:249951},
-};
-const SLOT_KEY={Head:"H",Shoulders:"Sh",Chest:"Ch",Hands:"Gl",Legs:"Le"};
+let TRINKETS={};
+let WEAPONS={};
+let TIER_IDS={};
+let TIER_SLOTS={};
+let SPECS=[];
+let DATA_VERSION="";
 
+const SLOT_KEY={Head:"H",Shoulders:"Sh",Chest:"Ch",Hands:"Gl",Legs:"Le"};
 const CC={"Death Knight":"#C41E3A","Demon Hunter":"#A330C9","Druid":"#FF7C0A","Evoker":"#33937F","Hunter":"#AAD372","Mage":"#3FC7EB","Monk":"#00FF98","Paladin":"#F48CBA","Priest":"#FFFFFF","Rogue":"#FFF468","Shaman":"#0070DD","Warlock":"#8788EE","Warrior":"#C69B6D"};
 const RI={"Tank":"🛡️","Healer":"💚","Melee DPS":"⚔️","Ranged DPS":"🏹"};
 
@@ -161,454 +131,6 @@ function weaponLink(w){
 }
 
 /* ════════════════════════════════════════
-   ALL 40 SPECS
-   CHANGELOG (most recent first):
-   2026-03-07 — Corrected all weapon & trinket Wowhead IDs from beta 254xxx range to live IDs; fixed Umbreal→Umbral spelling
-   2026-03-07 — Initial data (pre-season, Voidspire opens March 17)
-   ════════════════════════════════════════ */
-const DATA_VERSION="2026-03-07";
-
-// mk() argument order:
-//   class, spec, role, armor, tierSetName, tierSlotObj,
-//   usedSlots[], skippedSlot, 2pc bonus, 4pc bonus,
-//   bisWeapon, altWeapon, trinkets[], altTrinkets[]
-function mk(cls,spec,role,armor,tierName,slots,used,skip,t2,t4,bw,aw,tr,alt){
-  return{class:cls,spec,role,armor,tierSet:tierName,tierSlots:slots,tierUsed:used,tierSkipped:skip,tier2pc:t2,tier4pc:t4,bisWeapon:bw,altWeapon:aw,trinkets:tr,altTrinkets:alt};
-}
-const DK={Head:{name:"Relentless Rider's Crown",stats:"Haste / Mastery"},Shoulders:{name:"Relentless Rider's Dreadthorns",stats:"Haste / Vers"},Chest:{name:"Relentless Rider's Cuirass",stats:"Crit / Haste"},Hands:{name:"Relentless Rider's Bonegrasps",stats:"Haste / Mastery"},Legs:{name:"Relentless Rider's Legguards",stats:"Crit / Mastery"}};
-const DH={Head:{name:"Devouring Reaver's Intake",stats:"Haste / Mastery"},Shoulders:{name:"Devouring Reaver's Exhaustplates",stats:"Crit / Mastery"},Chest:{name:"Devouring Reaver's Engine",stats:"Crit / Mastery"},Hands:{name:"Devouring Reaver's Essence Grips",stats:"Crit / Haste"},Legs:{name:"Devouring Reaver's Pistons",stats:"Haste / Vers"}};
-const DR={Head:{name:"Branches of the Luminous Bloom",stats:"Haste / Mastery"},Shoulders:{name:"Seedpods of the Luminous Bloom",stats:"Crit / Mastery"},Chest:{name:"Trunk of the Luminous Bloom",stats:"Crit / Mastery"},Hands:{name:"Arbortenders of the Luminous Bloom",stats:"Haste / Vers"},Legs:{name:"Phloemwraps of the Luminous Bloom",stats:"Haste / Mastery"}};
-const EV={Head:{name:"Hornhelm of the Black Talon",stats:"Crit / Mastery"},Shoulders:{name:"Beacons of the Black Talon",stats:"Crit / Mastery"},Chest:{name:"Frenzyward of the Black Talon",stats:"Crit / Haste"},Hands:{name:"Enforcer's Grips of the Black Talon",stats:"Haste / Vers"},Legs:{name:"Greaves of the Black Talon",stats:"Haste / Mastery"}};
-const HU={Head:{name:"Primal Sentry's Maw",stats:"Crit / Haste"},Shoulders:{name:"Primal Sentry's Trophies",stats:"Haste / Vers"},Chest:{name:"Primal Sentry's Scaleplate",stats:"Crit / Haste"},Hands:{name:"Primal Sentry's Talonguards",stats:"Crit / Mastery"},Legs:{name:"Primal Sentry's Legguards",stats:"Crit / Mastery"}};
-const MA={Head:{name:"Voidbreaker's Veil",stats:"Haste / Mastery"},Shoulders:{name:"Voidbreaker's Leyline Nexi",stats:"Haste / Vers"},Chest:{name:"Voidbreaker's Robe",stats:"Crit / Haste"},Hands:{name:"Voidbreaker's Gloves",stats:"Haste / Mastery"},Legs:{name:"Voidbreaker's Britches",stats:"Crit / Haste"}};
-const MO={Head:{name:"Fearsome Visage of Ra-den's Chosen",stats:"Crit / Haste"},Shoulders:{name:"Aurastones of Ra-den's Chosen",stats:"Haste / Mastery"},Chest:{name:"Battle Garb of Ra-den's Chosen",stats:"Crit / Haste"},Hands:{name:"Thunderfists of Ra-den's Chosen",stats:"Crit / Vers"},Legs:{name:"Swiftsweepers of Ra-den's Chosen",stats:"Haste / Mastery"}};
-const PA={Head:{name:"Luminant Verdict's Unwavering Gaze",stats:"Haste / Mastery"},Shoulders:{name:"Luminant Verdict's Providence Watch",stats:"Crit / Mastery"},Chest:{name:"Luminant Verdict's Divine Warplate",stats:"Haste / Mastery"},Hands:{name:"Luminant Verdict's Gauntlets",stats:"Haste / Vers"},Legs:{name:"Luminant Verdict's Greaves",stats:"Crit / Haste"}};
-const PR={Head:{name:"Blind Oath's Winged Crest",stats:"Crit / Haste"},Shoulders:{name:"Blind Oath's Seraphguards",stats:"Crit / Mastery"},Chest:{name:"Blind Oath's Raiment",stats:"Haste / Mastery"},Hands:{name:"Blind Oath's Touch",stats:"Haste / Vers"},Legs:{name:"Blind Oath's Leggings",stats:"Haste / Mastery"}};
-const RO={Head:{name:"Masquerade of the Grim Jest",stats:"Vers / Mastery"},Shoulders:{name:"Shoulderpads of the Grim Jest",stats:"Crit / Haste"},Chest:{name:"Vest of the Grim Jest",stats:"Crit / Vers"},Hands:{name:"Handguards of the Grim Jest",stats:"Haste / Mastery"},Legs:{name:"Leggings of the Grim Jest",stats:"Crit / Haste"}};
-const SH={Head:{name:"Helm of the Primal Core",stats:"Crit / Haste"},Shoulders:{name:"Pauldrons of the Primal Core",stats:"Haste / Mastery"},Chest:{name:"Chestguard of the Primal Core",stats:"Crit / Mastery"},Hands:{name:"Grips of the Primal Core",stats:"Crit / Haste"},Legs:{name:"Legguards of the Primal Core",stats:"Haste / Mastery"}};
-const WL={Head:{name:"Crown of the Abyssal Immolator",stats:"Haste / Mastery"},Shoulders:{name:"Pauldrons of the Abyssal Immolator",stats:"Crit / Haste"},Chest:{name:"Robe of the Abyssal Immolator",stats:"Crit / Mastery"},Hands:{name:"Gloves of the Abyssal Immolator",stats:"Haste / Vers"},Legs:{name:"Leggings of the Abyssal Immolator",stats:"Crit / Haste"}};
-const WA={Head:{name:"Night Ender's Helm",stats:"Crit / Mastery"},Shoulders:{name:"Night Ender's Shoulderplates",stats:"Haste / Vers"},Chest:{name:"Night Ender's Breastplate",stats:"Crit / Haste"},Hands:{name:"Night Ender's Gauntlets",stats:"Crit / Mastery"},Legs:{name:"Night Ender's Legguards",stats:"Haste / Mastery"}};
-
-const c=n=>({name:`Crafted ${n} w/ Darkmoon Sigil: Hunt`,id:null});
-const r=n=>({name:n,id:null});
-
-const SPECS=[
-
-// ─────────────────────────────────────────────────────────────
-// DEATH KNIGHT
-// ─────────────────────────────────────────────────────────────
-  mk("Death Knight","Blood","Tank","Plate","Relentless Rider's Lament",
-     DK,["Head","Chest","Hands","Legs"],"Shoulders",
-     "Death Strike deals 8% increased damage, 10% chance for Blood Boil charge.", // 2pc
-     "Blood Boil +15% damage, grants Bone Shield stack.",                          // 4pc
-     c("Weapon"),                                                                   // BiS weapon
-     {name:"Bellamy's Final Judgement",id:249277},                                 // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Gloom-Spattered Dreadscale",r:"BiS 2"}], // trinkets
-     ["Solar Core Igniter","Sapling of the Dawnroot"]                              // alt trinkets
-  ),
-  mk("Death Knight","Frost","Melee DPS","Plate","Relentless Rider's Lament",
-     DK,["Head","Chest","Hands","Legs"],"Shoulders",
-     "Empower Rune Weapon: next Obliterate/Frostscythe +20%.",                    // 2pc
-     "Empower Rune Weapon recharges 20% faster. Pillar of Frost +1 charge.",      // 4pc
-     {name:"Bellamy's Final Judgement",id:249277},                                 // BiS weapon
-     {name:"Blade of the Final Twilight",id:249281},                               // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Light Company Guidon",r:"BiS 2"}], // trinkets
-     ["Algethar Puzzle Box","Heart of Ancient Hunger"]                             // alt trinkets
-  ),
-  mk("Death Knight","Unholy","Melee DPS","Plate","Relentless Rider's Lament",
-     DK,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Dread Plague +25%. Virulent Plague +25%.",                                   // 2pc
-     "Putrefy +20%, next Scourge Strike costs no Rune.",                           // 4pc
-     c("2H"),                                                                       // BiS weapon
-     {name:"Bellamy's Final Judgement",id:249277},                                 // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Light Company Guidon",r:"BiS 2"}], // trinkets
-     ["Umbral Plume","Heart of Ancient Hunger","Algethar Puzzle Box"]              // alt trinkets
-  ),
-
-// ─────────────────────────────────────────────────────────────
-// DEMON HUNTER
-// ─────────────────────────────────────────────────────────────
-  mk("Demon Hunter","Havoc","Melee DPS","Leather","Devouring Reaver's Sheathe",
-     DH,["Head","Shoulders","Chest","Hands"],"Legs",
-     "Eye Beam deals 15% increased damage.",                                        // 2pc
-     "Fracture: 30% chance for Fire AoE detonation.",                              // 4pc
-     c("Glaives"),                                                                  // BiS weapon
-     {name:"Blade of the Final Twilight",id:249281},                               // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}],   // trinkets
-     ["Light Company Guidon","Algethar Puzzle Box"]                                // alt trinkets
-  ),
-  mk("Demon Hunter","Vengeance","Tank","Leather","Devouring Reaver's Sheathe",
-     DH,["Head","Shoulders","Chest","Hands"],"Legs",
-     "Fracture: 30% chance for Fire AoE detonation.",                              // 2pc
-     "Fracture detonations reduce Fiery Brand CD by 2 sec.",                       // 4pc
-     c("Glaives"),                                                                  // BiS weapon
-     {name:"Blade of the Final Twilight",id:249281},                               // alt weapon
-     [{name:"Gloom-Spattered Dreadscale",r:"BiS 1"},{name:"Solar Core Igniter",r:"BiS 2"}], // trinkets
-     ["Gaze of the Alnseer","Seed of the Devouring Wild"]                          // alt trinkets
-  ),
-  mk("Demon Hunter","Devourer","Ranged DPS","Leather","Devouring Reaver's Sheathe",
-     DH,["Head","Shoulders","Chest","Hands"],"Legs",
-     "Devourer void consumption abilities deal 15% more damage.",                  // 2pc
-     "Consuming void energy: chance for secondary void eruption.",                  // 4pc
-     c("Glaives"),                                                                  // BiS weapon
-     {name:"Blade of the Final Twilight",id:249281},                               // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}],   // trinkets
-     ["Algethar Puzzle Box","Volatile Void Suffuser"]                              // alt trinkets
-  ),
-
-// ─────────────────────────────────────────────────────────────
-// DRUID
-// ─────────────────────────────────────────────────────────────
-  mk("Druid","Balance","Ranged DPS","Leather","Sprouts of the Luminous Bloom",
-     DR,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Starfall +15%, Starsurge +10%.",                                             // 2pc
-     "Eclipse: Wrath/Starfire +10%.",                                               // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}],   // trinkets
-     ["Algethar Puzzle Box","Volatile Void Suffuser"]                              // alt trinkets
-  ),
-  mk("Druid","Feral","Melee DPS","Leather","Sprouts of the Luminous Bloom",
-     DR,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Rip +15%, Ferocious Bite +10%.",                                             // 2pc
-     "Tiger's Fury grants 15% crit for 8 sec.",                                    // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Light Company Guidon",r:"BiS 2"}], // trinkets
-     ["Heart of Wind","Algethar Puzzle Box"]                                       // alt trinkets
-  ),
-  mk("Druid","Guardian","Tank","Leather","Sprouts of the Luminous Bloom",
-     DR,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Mangle +15%, Thrash +10%.",                                                  // 2pc
-     "Mangle: 20% chance to grant Rage of the Sleeper (4 sec).",                   // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Algethar Puzzle Box",r:"BiS 2"}], // trinkets
-     ["Gloom-Spattered Dreadscale","Solar Core Igniter","Light Company Guidon"]   // alt trinkets
-  ),
-  mk("Druid","Restoration","Healer","Leather","Sprouts of the Luminous Bloom",
-     DR,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Rejuvenation healing +15%.",                                                  // 2pc
-     "Wild Growth +20% healing on targets with Rejuvenation.",                     // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Volatile Void Suffuser",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}], // trinkets
-     ["Sapling of the Dawnroot","Mark of Light"]                                   // alt trinkets
-  ),
-
-// ─────────────────────────────────────────────────────────────
-// EVOKER
-// ─────────────────────────────────────────────────────────────
-  mk("Evoker","Augmentation","Ranged DPS","Mail","Livery of the Black Talon",
-     EV,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Ebon Might duration +2 sec.",                                                // 2pc
-     "Prescience grants additional 2% crit.",                                      // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}],   // trinkets
-     ["Algethar Puzzle Box","Volatile Void Suffuser"]                              // alt trinkets
-  ),
-  mk("Evoker","Devastation","Ranged DPS","Mail","Livery of the Black Talon",
-     EV,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Disintegrate and Pyre +10%.",                                                // 2pc
-     "Dragonrage grants 15% damage.",                                              // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Algethar Puzzle Box",r:"BiS 2"}], // trinkets
-     ["Heart of Wind","Volatile Void Suffuser"]                                    // alt trinkets
-  ),
-  mk("Evoker","Preservation","Healer","Mail","Livery of the Black Talon",
-     EV,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Dream Breath healing +20%.",                                                 // 2pc
-     "Reversion +15% healing on targets below 50% HP.",                            // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Volatile Void Suffuser",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}], // trinkets
-     ["Sapling of the Dawnroot","Mark of Light"]                                   // alt trinkets
-  ),
-
-// ─────────────────────────────────────────────────────────────
-// HUNTER
-// ─────────────────────────────────────────────────────────────
-  mk("Hunter","Beast Mastery","Ranged DPS","Mail","Primal Sentry's Camouflage",
-     HU,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Kill Command +15%.",                                                          // 2pc
-     "Bestial Wrath: pet +20% damage.",                                            // 4pc
-     c("Bow/Gun"),                                                                  // BiS weapon
-     r("Raid Ranged (Voidspire)"),                                                  // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}],   // trinkets
-     ["Algethar Puzzle Box","Light Company Guidon"]                                // alt trinkets
-  ),
-  mk("Hunter","Marksmanship","Ranged DPS","Mail","Primal Sentry's Camouflage",
-     HU,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Aimed Shot +10%, Rapid Fire +15%.",                                          // 2pc
-     "Trueshot: +10% crit damage.",                                                // 4pc
-     c("Bow/Gun"),                                                                  // BiS weapon
-     r("Raid Ranged (Voidspire)"),                                                  // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Light Company Guidon",r:"BiS 2"}], // trinkets
-     ["Heart of Wind","Algethar Puzzle Box"]                                       // alt trinkets
-  ),
-  mk("Hunter","Survival","Ranged DPS","Mail","Primal Sentry's Camouflage",
-     HU,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Kill Command and Raptor Strike +10%.",                                       // 2pc
-     "Coordinated Assault extends 2 sec on crit.",                                 // 4pc
-     c("Polearm"),                                                                  // BiS weapon
-     r("Raid Polearm (Voidspire)"),                                                 // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}],   // trinkets
-     ["Light Company Guidon","Algethar Puzzle Box"]                                // alt trinkets
-  ),
-
-// ─────────────────────────────────────────────────────────────
-// MAGE
-// ─────────────────────────────────────────────────────────────
-  mk("Mage","Arcane","Ranged DPS","Cloth","Voidbreaker's Accordance",
-     MA,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Arcane Blast and Arcane Missiles +10%.",                                     // 2pc
-     "Arcane Surge: +15% Intellect.",                                              // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Algethar Puzzle Box",r:"BiS 2"}], // trinkets
-     ["Heart of Wind","Volatile Void Suffuser"]                                    // alt trinkets
-  ),
-  mk("Mage","Fire","Ranged DPS","Cloth","Voidbreaker's Accordance",
-     MA,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Pyroblast and Flamestrike +10%.",                                            // 2pc
-     "Combustion: Fire damage +15%.",                                              // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}],   // trinkets
-     ["Algethar Puzzle Box","Volatile Void Suffuser"]                              // alt trinkets
-  ),
-  mk("Mage","Frost","Ranged DPS","Cloth","Voidbreaker's Accordance",
-     MA,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Ice Lance and Glacial Spike +10%.",                                          // 2pc
-     "Icy Veins: +10% Frost damage.",                                              // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Algethar Puzzle Box",r:"BiS 2"}], // trinkets
-     ["Heart of Wind","Volatile Void Suffuser"]                                    // alt trinkets
-  ),
-
-// ─────────────────────────────────────────────────────────────
-// MONK
-// ─────────────────────────────────────────────────────────────
-  mk("Monk","Brewmaster","Tank","Leather","Way of Ra-den's Chosen",
-     MO,["Shoulders","Chest","Hands","Legs"],"Head",
-     "Keg Smash +15%, CD reduced by 1 sec.",                                       // 2pc
-     "Blackout Kick: 20% chance to reset Keg Smash CD.",                           // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Gloom-Spattered Dreadscale",r:"BiS 1"},{name:"Gaze of the Alnseer",r:"BiS 2"}], // trinkets
-     ["Solar Core Igniter","Algethar Puzzle Box"]                                  // alt trinkets
-  ),
-  mk("Monk","Mistweaver","Healer","Leather","Way of Ra-den's Chosen",
-     MO,["Shoulders","Chest","Hands","Legs"],"Head",
-     "Vivify healing +15%.",                                                        // 2pc
-     "Thunder Focus Tea: next Vivify +25%.",                                       // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Volatile Void Suffuser",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}], // trinkets
-     ["Sapling of the Dawnroot","Mark of Light"]                                   // alt trinkets
-  ),
-  mk("Monk","Windwalker","Melee DPS","Leather","Way of Ra-den's Chosen",
-     MO,["Shoulders","Chest","Hands","Legs"],"Head",
-     "Rising Sun Kick +15%.",                                                       // 2pc
-     "Fists of Fury: +10% damage for 8 sec.",                                      // 4pc
-     c("Fist Weapons"),                                                             // BiS weapon
-     r("Raid Fist Weapons (Voidspire)"),                                            // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Light Company Guidon",r:"BiS 2"}], // trinkets
-     ["Heart of Wind","Algethar Puzzle Box"]                                       // alt trinkets
-  ),
-
-// ─────────────────────────────────────────────────────────────
-// PALADIN
-// ─────────────────────────────────────────────────────────────
-  mk("Paladin","Holy","Healer","Plate","Luminant Verdict's Vestments",
-     PA,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Holy Shock healing +15%.",                                                   // 2pc
-     "Holy Shock transfers additional healing to Beacon of Light.",                // 4pc
-     c("1H+Shield"),                                                                // BiS weapon
-     r("Raid 1H (Voidspire)"),                                                      // alt weapon
-     [{name:"Volatile Void Suffuser",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}], // trinkets
-     ["Mark of Light","Sapling of the Dawnroot"]                                   // alt trinkets
-  ),
-  mk("Paladin","Protection","Tank","Plate","Luminant Verdict's Vestments",
-     PA,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Shield of the Righteous: +10% block for 5 sec.",                             // 2pc
-     "Avenger's Shield +15%, generates 1 Holy Power.",                             // 4pc
-     c("1H+Shield"),                                                                // BiS weapon
-     r("Raid 1H (Voidspire)"),                                                      // alt weapon
-     [{name:"Gloom-Spattered Dreadscale",r:"BiS 1"},{name:"Seed of the Devouring Wild",r:"BiS 2"}], // trinkets
-     ["Heart of Wind","Solar Core Igniter"]                                        // alt trinkets
-  ),
-  mk("Paladin","Retribution","Melee DPS","Plate","Luminant Verdict's Vestments",
-     PA,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Templar's Verdict / Final Verdict +10%.",                                    // 2pc
-     "TV applies Expurgation at 50%; Divine Storm at 25%.",                        // 4pc
-     c("2H Sword"),                                                                 // BiS weapon
-     {name:"Bellamy's Final Judgement",id:249277},                                 // alt weapon
-     [{name:"Resonant Bellowstone",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}],  // trinkets
-     ["Idol of the War Loa","Vessel of Tortured Souls"]                            // alt trinkets
-  ),
-
-// ─────────────────────────────────────────────────────────────
-// PRIEST
-// ─────────────────────────────────────────────────────────────
-  mk("Priest","Discipline","Healer","Cloth","Blind Oath's Burden",
-     PR,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Atonement healing +10%.",                                                    // 2pc
-     "Atonements from Flash Heal / Radiance last +3 sec.",                         // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Volatile Void Suffuser",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}], // trinkets
-     ["Mark of Light","Sapling of the Dawnroot"]                                   // alt trinkets
-  ),
-  mk("Priest","Holy","Healer","Cloth","Blind Oath's Burden",
-     PR,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Prayer of Mending healing +20%.",                                            // 2pc
-     "Holy Word: Serenity also applies Renew at 100%.",                            // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Volatile Void Suffuser",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}], // trinkets
-     ["Mark of Light","Sapling of the Dawnroot"]                                   // alt trinkets
-  ),
-  mk("Priest","Shadow","Ranged DPS","Cloth","Blind Oath's Burden",
-     PR,["Head","Shoulders","Chest","Legs"],"Hands",
-     "SW: Madness +10%, Insanity cost −5.",                                        // 2pc
-     "Shadowy & Void Apparitions +40%.",                                           // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Algethar Puzzle Box",r:"BiS 2"}], // trinkets
-     ["Heart of Wind","Volatile Void Suffuser"]                                    // alt trinkets
-  ),
-
-// ─────────────────────────────────────────────────────────────
-// ROGUE
-// ─────────────────────────────────────────────────────────────
-  mk("Rogue","Assassination","Melee DPS","Leather","Motley of the Grim Jest",
-     RO,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Garrote +30%, applies poisons. Energy −10.",                                 // 2pc
-     "Mutilate/Ambush/FoK +25% to poisoned targets.",                              // 4pc
-     c("Daggers"),                                                                  // BiS weapon
-     r("Raid Daggers (Voidspire)"),                                                 // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Light Company Guidon",r:"BiS 2"}], // trinkets
-     ["Heart of Wind","Algethar Puzzle Box"]                                       // alt trinkets
-  ),
-  mk("Rogue","Outlaw","Melee DPS","Leather","Motley of the Grim Jest",
-     RO,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Blade Rush +30%, primary target +25%.",                                      // 2pc
-     "Blade Rush CD −6 sec, +5% damage for 8 sec.",                                // 4pc
-     c("1H Swords"),                                                                // BiS weapon
-     r("Raid 1H Swords (Voidspire)"),                                               // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}],   // trinkets
-     ["Light Company Guidon","Algethar Puzzle Box"]                                // alt trinkets
-  ),
-  mk("Rogue","Subtlety","Melee DPS","Leather","Motley of the Grim Jest",
-     RO,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Finishers +1.5% per combo point.",                                           // 2pc
-     "Shadow Blades +4 sec, attacks deal +6% Shadow.",                             // 4pc
-     c("Daggers"),                                                                  // BiS weapon
-     r("Raid Daggers (Voidspire)"),                                                 // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Light Company Guidon",r:"BiS 2"}], // trinkets
-     ["Heart of Wind","Algethar Puzzle Box"]                                       // alt trinkets
-  ),
-
-// ─────────────────────────────────────────────────────────────
-// SHAMAN
-// ─────────────────────────────────────────────────────────────
-  mk("Shaman","Elemental","Ranged DPS","Mail","Mantle of the Primal Core",
-     SH,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Haste +15% for 10 sec after Stormkeeper.",                                   // 2pc
-     "Stormkeeper +1 charge. LB/CL +25%.",                                         // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid 1H+Shield (Voidspire)"),                                               // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Algethar Puzzle Box",r:"BiS 2"}], // trinkets
-     ["Heart of Wind","Volatile Void Suffuser"]                                    // alt trinkets
-  ),
-  mk("Shaman","Enhancement","Melee DPS","Mail","Mantle of the Primal Core",
-     SH,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Stormstrike +15%, Lava Lash +15%.",                                          // 2pc
-     "Crash Lightning enhancement: +2% Mastery.",                                  // 4pc
-     c("1H Weapons"),                                                               // BiS weapon
-     r("Raid 1H Weapons (Voidspire)"),                                              // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}],   // trinkets
-     ["Light Company Guidon","Algethar Puzzle Box"]                                // alt trinkets
-  ),
-  mk("Shaman","Restoration","Healer","Mail","Mantle of the Primal Core",
-     SH,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Unleash Life CD −3 sec, healing doubled.",                                   // 2pc
-     "Unleash Life affects additional spell at 100%.",                              // 4pc
-     c("1H+Shield"),                                                                // BiS weapon
-     r("Raid 1H+Shield (Voidspire)"),                                               // alt weapon
-     [{name:"Volatile Void Suffuser",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}], // trinkets
-     ["Mark of Light","Sapling of the Dawnroot"]                                   // alt trinkets
-  ),
-
-// ─────────────────────────────────────────────────────────────
-// WARLOCK
-// ─────────────────────────────────────────────────────────────
-  mk("Warlock","Affliction","Ranged DPS","Cloth","Reign of the Abyssal Immolator",
-     WL,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Agony +15%, Corruption +10%.",                                               // 2pc
-     "Darkglare extends all DoTs by +4 sec.",                                      // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Algethar Puzzle Box",r:"BiS 2"}], // trinkets
-     ["Heart of Wind","Volatile Void Suffuser"]                                    // alt trinkets
-  ),
-  mk("Warlock","Demonology","Ranged DPS","Cloth","Reign of the Abyssal Immolator",
-     WL,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Demonbolt +15%, Hand of Gul'dan +10%.",                                      // 2pc
-     "Demonic Tyrant: demon damage +15%.",                                         // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Heart of Wind",r:"BiS 2"}],   // trinkets
-     ["Algethar Puzzle Box","Volatile Void Suffuser"]                              // alt trinkets
-  ),
-  mk("Warlock","Destruction","Ranged DPS","Cloth","Reign of the Abyssal Immolator",
-     WL,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Chaos Bolt +10%, Incinerate +10%.",                                          // 2pc
-     "Infernal +20% damage, +5 sec duration.",                                     // 4pc
-     c("2H Staff"),                                                                 // BiS weapon
-     r("Raid Staff (Voidspire)"),                                                   // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Algethar Puzzle Box",r:"BiS 2"}], // trinkets
-     ["Heart of Wind","Volatile Void Suffuser"]                                    // alt trinkets
-  ),
-
-// ─────────────────────────────────────────────────────────────
-// WARRIOR
-// ─────────────────────────────────────────────────────────────
-  mk("Warrior","Arms","Melee DPS","Plate","Rage of the Night Ender",
-     WA,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Mortal Strike/Cleave +5%. Colossus Smash: +5% dmg taken.",                  // 2pc
-     "MS/Cleave (3+) extends Colossus Smash by 1 sec.",                            // 4pc
-     c("2H"),                                                                       // BiS weapon
-     {name:"Bellamy's Final Judgement",id:249277},                                 // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Light Company Guidon",r:"BiS 2"}], // trinkets
-     ["Heart of Wind","Algethar Puzzle Box"]                                       // alt trinkets
-  ),
-  mk("Warrior","Fury","Melee DPS","Plate","Rage of the Night Ender",
-     WA,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Rampage +10%, Odyn's Fury +10%.",                                            // 2pc
-     "Rampage reduces OF CD by 2.5 sec. OF +10%.",                                 // 4pc
-     c("2H (x2)"),                                                                  // BiS weapon
-     r("Raid 2H Weapons (Voidspire)"),                                              // alt weapon
-     [{name:"Gaze of the Alnseer",r:"BiS 1"},{name:"Light Company Guidon",r:"BiS 2"}], // trinkets
-     ["Heart of Wind","Algethar Puzzle Box"]                                       // alt trinkets
-  ),
-  mk("Warrior","Protection","Tank","Plate","Rage of the Night Ender",
-     WA,["Head","Shoulders","Chest","Legs"],"Hands",
-     "Shield Slam +10%, Shield Charge +100%.",                                     // 2pc
-     "Revenge/TC +10%. Shield Charge grants Revenge!.",                            // 4pc
-     c("1H+Shield"),                                                                // BiS weapon
-     r("Raid 1H (Voidspire)"),                                                      // alt weapon
-     [{name:"Gloom-Spattered Dreadscale",r:"BiS 1"},{name:"Solar Core Igniter",r:"BiS 2"}], // trinkets
-     ["Gaze of the Alnseer","Seed of the Devouring Wild"]                          // alt trinkets
-  ),
-
-];
-
-/* ════════════════════════════════════════
    RENDERING
    ════════════════════════════════════════ */
 let openKey=null;
@@ -620,6 +142,7 @@ function renderRow(s){
   const k=`${s.class}-${s.spec}`;
   const c=CC[s.class]||"#aaa";
   const ti=TIER_IDS[s.class]||{};
+  if(!s.tierSlots) s.tierSlots=TIER_SLOTS[s.class]||{};
   const isOpen=openKey===k;
 
   // Tier table rows
@@ -684,32 +207,54 @@ function toggle(k){
   render();
 }
 
-// Build filters
-const allClasses=["All",...new Set(SPECS.map(s=>s.class))];
-const sel=document.getElementById("classFilter");
-allClasses.forEach(c=>{const o=document.createElement("option");o.value=c;o.textContent=c==="All"?"All Classes":c;sel.appendChild(o);});
-sel.addEventListener("change",e=>{currentClassFilter=e.target.value;render();});
-document.getElementById("search").addEventListener("input",e=>{currentSearch=e.target.value;render();});
-
-// Role buttons
-const roles=["All","Tank","Healer","Melee DPS","Ranged DPS"];
-const filtersDiv=document.getElementById("filters");
-const countSpan=document.getElementById("count");
-roles.forEach(r=>{
-  const b=document.createElement("button");
-  b.textContent=r==="All"?"All Roles":`${RI[r]} ${r}`;
-  b.className=r==="All"?"on":"off";
-  b.dataset.role=r;
-  b.addEventListener("click",()=>{
-    currentRoleFilter=r;
-    filtersDiv.querySelectorAll("button").forEach(btn=>{btn.className=btn.dataset.role===r?"on":"off";});
-    render();
+// Load data from external JSON, then build UI
+fetch("bis-data.json")
+  .then(r=>r.json())
+  .then(data=>{
+    TRINKETS=data.trinkets||{};
+    WEAPONS=data.weapons||{};
+    TIER_IDS=data.tierIds||{};
+    TIER_SLOTS=data.tierSlots||{};
+    DATA_VERSION=data.dataVersion||"unknown";
+    // Each spec in JSON has tierUsed/tierSkipped but tierSlots comes from class-level data
+    SPECS=(data.specs||[]).map(s=>{
+      s.tierSlots=TIER_SLOTS[s.class]||{};
+      return s;
+    });
+    initUI();
+  })
+  .catch(err=>{
+    document.getElementById("list").innerHTML=`<div style="color:#f87171;padding:40px;text-align:center">Failed to load bis-data.json: ${err.message}<br>Make sure the JSON file is served from the same origin.</div>`;
   });
-  filtersDiv.insertBefore(b,countSpan);
-});
 
-document.getElementById("data-ver").textContent=DATA_VERSION;
-render();
+function initUI(){
+  // Build filters
+  const allClasses=["All",...new Set(SPECS.map(s=>s.class))];
+  const sel=document.getElementById("classFilter");
+  allClasses.forEach(c=>{const o=document.createElement("option");o.value=c;o.textContent=c==="All"?"All Classes":c;sel.appendChild(o);});
+  sel.addEventListener("change",e=>{currentClassFilter=e.target.value;render();});
+  document.getElementById("search").addEventListener("input",e=>{currentSearch=e.target.value;render();});
+
+  // Role buttons
+  const roles=["All","Tank","Healer","Melee DPS","Ranged DPS"];
+  const filtersDiv=document.getElementById("filters");
+  const countSpan=document.getElementById("count");
+  roles.forEach(r=>{
+    const b=document.createElement("button");
+    b.textContent=r==="All"?"All Roles":`${RI[r]} ${r}`;
+    b.className=r==="All"?"on":"off";
+    b.dataset.role=r;
+    b.addEventListener("click",()=>{
+      currentRoleFilter=r;
+      filtersDiv.querySelectorAll("button").forEach(btn=>{btn.className=btn.dataset.role===r?"on":"off";});
+      render();
+    });
+    filtersDiv.insertBefore(b,countSpan);
+  });
+
+  document.getElementById("data-ver").textContent=DATA_VERSION;
+  render();
+}
 </script>
 </body>
 </html>
