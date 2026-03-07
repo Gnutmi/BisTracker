@@ -24,12 +24,3 @@ No build tools or dependencies required. Just open `midnight-bis-reference.html`
 Compiled from Wowhead Beta, Method.gg, Maxroll.gg, and Icy Veins (March 2026).
 
 > **Note:** Voidspire raid opens March 17, 2026. Lists are early/theoretical until then. Always sim on [Raidbots](https://www.raidbots.com) for personalized results.
-
-## Hosting (GitHub Pages)
-
-To host this yourself:
-
-1. Go to **Settings → Pages**
-2. Set Source to **Deploy from a branch**
-3. Select branch `master`, folder `/ (root)`
-4. Save — the tool will be live at `https://<your-username>.github.io/<repo-name>/midnight-bis-reference.html`
