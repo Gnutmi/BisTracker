@@ -87,8 +87,7 @@ Data was scraped/compiled from:
 
 ### High Priority — Data Correctness
 
-1. **Survival Hunter role is wrong**: Currently listed as `"Ranged DPS"` in the `SPECS` array, but Survival is a Melee DPS spec. Fix the `mk()` call for Hunter Survival to use `"Melee DPS"`.
-2. **Item ID accuracy**: All trinket IDs in the 254xxx range were from beta datamining and may have changed on live. Verify each against live Wowhead (post March 17) and update the `TRINKETS` object.
+1. **Item ID accuracy**: All trinket IDs in the 254xxx range were from beta datamining and may have changed on live. Verify each against live Wowhead (post March 17) and update the `TRINKETS` object.
 3. **Trinket name accuracy**: Verify `"Gaze of the Alnseer"` spelling against the live Wowhead item name — if wrong, update both the `TRINKETS` key and every spec reference to it.
 4. **Sparse `WEAPONS` object**: Only two weapons have Wowhead IDs (`Bellamy's Final Judgement`, `Blade of the Final Twilight`). Every other spec uses `r()` (no ID), so alt weapon links have no tooltip. Add IDs for all raid weapon drops once live Wowhead is stable.
 5. **Tier skip may vary**: The "skip" piece is a general recommendation. Some specs may prefer different skip slots depending on available M+ or crafted alternatives. Consider adding per-spec notes.
