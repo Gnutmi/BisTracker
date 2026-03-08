@@ -1,5 +1,5 @@
 {
-  "dataVersion": "2026-03-07",
+  "dataVersion": "2026-03-08",
   "trinkets": {
     "Gaze of the Alnseer": { "id": 249343, "src": "Chimaerus (Dreamrift)" },
     "Light Company Guidon": { "id": 249344, "src": "Imperator Averzian (Voidspire)" },
@@ -18,7 +18,13 @@
     "Sapling of the Dawnroot": { "id": 250259, "src": "Dungeon Drop" },
     "Mark of Light": { "id": 250241, "src": "Dungeon Drop" },
     "Solarflare Prism": { "id": 252420, "src": "Skyreach" },
-    "Kroluk's Warbanner": { "id": 250227, "src": "Dungeon Drop" }
+    "Kroluk's Warbanner": { "id": 250227, "src": "Dungeon Drop" },
+    "Vaelgor's Final Stare": { "id": 249346, "src": "Vaelgor & Ezzorak (Voidspire)" },
+    "Locus-Walker's Ribbon": { "id": 249809, "src": "March on Quel'Danas" },
+    "Shadow of the Empyrean Requiem": { "id": 249810, "src": "March on Quel'Danas" },
+    "Emberwing Feather": { "id": 250144, "src": "Windrunner Spire" },
+    "Wraps of Cosmic Madness": { "id": 249340, "src": "Fallen-King Salhadaar (Voidspire)" },
+    "Emerald Coach's Whistle": { "id": 193718, "src": "Algeth'ar Academy" }
   },
   "weapons": {
     "Bellamy's Final Judgement": 249277,
@@ -145,7 +151,7 @@
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
         { "name": "Gloom-Spattered Dreadscale", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Solar Core Igniter", "Sapling of the Dawnroot"]
+      "altTrinkets": ["Solar Core Igniter", "Algethar Puzzle Box"]
     },
     {
       "class": "Death Knight", "spec": "Frost", "role": "Melee DPS", "armor": "Plate",
@@ -157,9 +163,9 @@
       "altWeapon": { "name": "Blade of the Final Twilight", "id": 249281 },
       "trinkets": [
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Light Company Guidon", "r": "BiS 2" }
+        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Algethar Puzzle Box", "Heart of Ancient Hunger"]
+      "altTrinkets": ["Light Company Guidon", "Heart of Wind"]
     },
     {
       "class": "Death Knight", "spec": "Unholy", "role": "Melee DPS", "armor": "Plate",
@@ -171,9 +177,9 @@
       "altWeapon": { "name": "Bellamy's Final Judgement", "id": 249277 },
       "trinkets": [
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Light Company Guidon", "r": "BiS 2" }
+        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Umbral Plume", "Heart of Ancient Hunger", "Algethar Puzzle Box"]
+      "altTrinkets": ["Umbral Plume", "Heart of Wind"]
     },
     {
       "class": "Demon Hunter", "spec": "Havoc", "role": "Melee DPS", "armor": "Leather",
@@ -185,9 +191,9 @@
       "altWeapon": { "name": "Blade of the Final Twilight", "id": 249281 },
       "trinkets": [
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Heart of Wind", "r": "BiS 2" }
+        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Light Company Guidon", "Algethar Puzzle Box"]
+      "altTrinkets": ["Umbral Plume", "Solarflare Prism"]
     },
     {
       "class": "Demon Hunter", "spec": "Vengeance", "role": "Tank", "armor": "Leather",
@@ -198,10 +204,10 @@
       "bisWeapon": { "name": "Crafted Glaives w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Blade of the Final Twilight", "id": 249281 },
       "trinkets": [
-        { "name": "Gloom-Spattered Dreadscale", "r": "BiS 1" },
-        { "name": "Solar Core Igniter", "r": "BiS 2" }
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Umbral Plume", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Gaze of the Alnseer", "Seed of the Devouring Wild"]
+      "altTrinkets": ["Heart of Wind", "Solarflare Prism"]
     },
     {
       "class": "Demon Hunter", "spec": "Devourer", "role": "Ranged DPS", "armor": "Leather",
@@ -215,7 +221,7 @@
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
         { "name": "Heart of Wind", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Algethar Puzzle Box", "Volatile Void Suffuser"]
+      "altTrinkets": ["Algethar Puzzle Box", "Locus-Walker's Ribbon"]
     },
     {
       "class": "Druid", "spec": "Balance", "role": "Ranged DPS", "armor": "Leather",
@@ -226,10 +232,10 @@
       "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
-        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Heart of Wind", "r": "BiS 2" }
+        { "name": "Vaelgor's Final Stare", "r": "BiS 1" },
+        { "name": "Gaze of the Alnseer", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Algethar Puzzle Box", "Volatile Void Suffuser"]
+      "altTrinkets": ["Wraps of Cosmic Madness", "Algethar Puzzle Box"]
     },
     {
       "class": "Druid", "spec": "Feral", "role": "Melee DPS", "armor": "Leather",
@@ -241,9 +247,9 @@
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Light Company Guidon", "r": "BiS 2" }
+        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
+      "altTrinkets": ["Umbral Plume", "Heart of Wind"]
     },
     {
       "class": "Druid", "spec": "Guardian", "role": "Tank", "armor": "Leather",
@@ -257,7 +263,7 @@
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
         { "name": "Algethar Puzzle Box", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Gloom-Spattered Dreadscale", "Solar Core Igniter", "Light Company Guidon"]
+      "altTrinkets": ["Light Company Guidon", "Umbral Plume"]
     },
     {
       "class": "Druid", "spec": "Restoration", "role": "Healer", "armor": "Leather",
@@ -269,9 +275,9 @@
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
         { "name": "Volatile Void Suffuser", "r": "BiS 1" },
-        { "name": "Heart of Wind", "r": "BiS 2" }
+        { "name": "Locus-Walker's Ribbon", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Sapling of the Dawnroot", "Mark of Light"]
+      "altTrinkets": ["Heart of Wind", "Emerald Coach's Whistle"]
     },
     {
       "class": "Evoker", "spec": "Augmentation", "role": "Ranged DPS", "armor": "Mail",
@@ -282,10 +288,10 @@
       "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
-        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Heart of Wind", "r": "BiS 2" }
+        { "name": "Shadow of the Empyrean Requiem", "r": "BiS 1" },
+        { "name": "Wraps of Cosmic Madness", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Algethar Puzzle Box", "Volatile Void Suffuser"]
+      "altTrinkets": ["Emberwing Feather", "Locus-Walker's Ribbon"]
     },
     {
       "class": "Evoker", "spec": "Devastation", "role": "Ranged DPS", "armor": "Mail",
@@ -296,10 +302,10 @@
       "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
-        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
+        { "name": "Shadow of the Empyrean Requiem", "r": "BiS 1" },
+        { "name": "Gaze of the Alnseer", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Heart of Wind", "Volatile Void Suffuser"]
+      "altTrinkets": ["Vessel of Tortured Souls", "Locus-Walker's Ribbon"]
     },
     {
       "class": "Evoker", "spec": "Preservation", "role": "Healer", "armor": "Mail",
@@ -310,10 +316,10 @@
       "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
-        { "name": "Volatile Void Suffuser", "r": "BiS 1" },
-        { "name": "Heart of Wind", "r": "BiS 2" }
+        { "name": "Locus-Walker's Ribbon", "r": "BiS 1" },
+        { "name": "Gaze of the Alnseer", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Sapling of the Dawnroot", "Mark of Light"]
+      "altTrinkets": ["Emerald Coach's Whistle", "Heart of Wind"]
     },
     {
       "class": "Hunter", "spec": "Beast Mastery", "role": "Ranged DPS", "armor": "Mail",
@@ -324,10 +330,10 @@
       "bisWeapon": { "name": "Crafted Bow/Gun w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Raid Ranged (Voidspire)", "id": null },
       "trinkets": [
-        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Heart of Wind", "r": "BiS 2" }
+        { "name": "Algethar Puzzle Box", "r": "BiS 1" },
+        { "name": "Radiant Plume", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Algethar Puzzle Box", "Light Company Guidon"]
+      "altTrinkets": ["Gaze of the Alnseer", "Vessel of Tortured Souls"]
     },
     {
       "class": "Hunter", "spec": "Marksmanship", "role": "Ranged DPS", "armor": "Mail",
@@ -339,9 +345,9 @@
       "altWeapon": { "name": "Raid Ranged (Voidspire)", "id": null },
       "trinkets": [
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Light Company Guidon", "r": "BiS 2" }
+        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
+      "altTrinkets": ["Radiant Plume", "Light Company Guidon"]
     },
     {
       "class": "Hunter", "spec": "Survival", "role": "Ranged DPS", "armor": "Mail",
@@ -353,9 +359,9 @@
       "altWeapon": { "name": "Raid Polearm (Voidspire)", "id": null },
       "trinkets": [
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Heart of Wind", "r": "BiS 2" }
+        { "name": "Radiant Plume", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Light Company Guidon", "Algethar Puzzle Box"]
+      "altTrinkets": ["Algethar Puzzle Box", "Light Company Guidon"]
     },
     {
       "class": "Mage", "spec": "Arcane", "role": "Ranged DPS", "armor": "Cloth",
@@ -366,10 +372,10 @@
       "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
-        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
+        { "name": "Vaelgor's Final Stare", "r": "BiS 1" },
+        { "name": "Gaze of the Alnseer", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Heart of Wind", "Volatile Void Suffuser"]
+      "altTrinkets": ["Locus-Walker's Ribbon", "Algethar Puzzle Box"]
     },
     {
       "class": "Mage", "spec": "Fire", "role": "Ranged DPS", "armor": "Cloth",
@@ -381,9 +387,9 @@
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Heart of Wind", "r": "BiS 2" }
+        { "name": "Emberwing Feather", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Algethar Puzzle Box", "Volatile Void Suffuser"]
+      "altTrinkets": ["Locus-Walker's Ribbon", "Algethar Puzzle Box"]
     },
     {
       "class": "Mage", "spec": "Frost", "role": "Ranged DPS", "armor": "Cloth",
@@ -394,10 +400,10 @@
       "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
-        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
+        { "name": "Emberwing Feather", "r": "BiS 1" },
+        { "name": "Locus-Walker's Ribbon", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Heart of Wind", "Volatile Void Suffuser"]
+      "altTrinkets": ["Gaze of the Alnseer", "Heart of Wind"]
     },
     {
       "class": "Monk", "spec": "Brewmaster", "role": "Tank", "armor": "Leather",
@@ -409,9 +415,9 @@
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
         { "name": "Gloom-Spattered Dreadscale", "r": "BiS 1" },
-        { "name": "Gaze of the Alnseer", "r": "BiS 2" }
+        { "name": "Solar Core Igniter", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Solar Core Igniter", "Algethar Puzzle Box"]
+      "altTrinkets": ["Gaze of the Alnseer", "Algethar Puzzle Box"]
     },
     {
       "class": "Monk", "spec": "Mistweaver", "role": "Healer", "armor": "Leather",
@@ -422,10 +428,10 @@
       "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
-        { "name": "Volatile Void Suffuser", "r": "BiS 1" },
-        { "name": "Heart of Wind", "r": "BiS 2" }
+        { "name": "Locus-Walker's Ribbon", "r": "BiS 1" },
+        { "name": "Volatile Void Suffuser", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Sapling of the Dawnroot", "Mark of Light"]
+      "altTrinkets": ["Emberwing Feather", "Heart of Wind"]
     },
     {
       "class": "Monk", "spec": "Windwalker", "role": "Melee DPS", "armor": "Leather",
@@ -437,9 +443,9 @@
       "altWeapon": { "name": "Raid Fist Weapons (Voidspire)", "id": null },
       "trinkets": [
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Light Company Guidon", "r": "BiS 2" }
+        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
+      "altTrinkets": ["Light Company Guidon", "Radiant Plume"]
     },
     {
       "class": "Paladin", "spec": "Holy", "role": "Healer", "armor": "Plate",
@@ -450,10 +456,10 @@
       "bisWeapon": { "name": "Crafted 1H+Shield w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Raid 1H (Voidspire)", "id": null },
       "trinkets": [
-        { "name": "Volatile Void Suffuser", "r": "BiS 1" },
+        { "name": "Locus-Walker's Ribbon", "r": "BiS 1" },
         { "name": "Heart of Wind", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Mark of Light", "Sapling of the Dawnroot"]
+      "altTrinkets": ["Volatile Void Suffuser", "Mark of Light"]
     },
     {
       "class": "Paladin", "spec": "Protection", "role": "Tank", "armor": "Plate",
@@ -465,9 +471,9 @@
       "altWeapon": { "name": "Raid 1H (Voidspire)", "id": null },
       "trinkets": [
         { "name": "Gloom-Spattered Dreadscale", "r": "BiS 1" },
-        { "name": "Seed of the Devouring Wild", "r": "BiS 2" }
+        { "name": "Solar Core Igniter", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Heart of Wind", "Solar Core Igniter"]
+      "altTrinkets": ["Gaze of the Alnseer", "Seed of the Devouring Wild"]
     },
     {
       "class": "Paladin", "spec": "Retribution", "role": "Melee DPS", "armor": "Plate",
@@ -478,10 +484,10 @@
       "bisWeapon": { "name": "Crafted 2H Sword w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Bellamy's Final Judgement", "id": 249277 },
       "trinkets": [
-        { "name": "Resonant Bellowstone", "r": "BiS 1" },
-        { "name": "Heart of Wind", "r": "BiS 2" }
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Umbral Plume", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Idol of the War Loa", "Vessel of Tortured Souls"]
+      "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
     },
     {
       "class": "Priest", "spec": "Discipline", "role": "Healer", "armor": "Cloth",
@@ -492,10 +498,10 @@
       "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
-        { "name": "Volatile Void Suffuser", "r": "BiS 1" },
-        { "name": "Heart of Wind", "r": "BiS 2" }
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Locus-Walker's Ribbon", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Mark of Light", "Sapling of the Dawnroot"]
+      "altTrinkets": ["Volatile Void Suffuser", "Heart of Wind"]
     },
     {
       "class": "Priest", "spec": "Holy", "role": "Healer", "armor": "Cloth",
@@ -506,10 +512,10 @@
       "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
-        { "name": "Volatile Void Suffuser", "r": "BiS 1" },
-        { "name": "Heart of Wind", "r": "BiS 2" }
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Locus-Walker's Ribbon", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Mark of Light", "Sapling of the Dawnroot"]
+      "altTrinkets": ["Volatile Void Suffuser", "Heart of Wind"]
     },
     {
       "class": "Priest", "spec": "Shadow", "role": "Ranged DPS", "armor": "Cloth",
@@ -521,9 +527,9 @@
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
+        { "name": "Vessel of Tortured Souls", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Heart of Wind", "Volatile Void Suffuser"]
+      "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
     },
     {
       "class": "Rogue", "spec": "Assassination", "role": "Melee DPS", "armor": "Leather",
@@ -535,9 +541,9 @@
       "altWeapon": { "name": "Raid Daggers (Voidspire)", "id": null },
       "trinkets": [
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Light Company Guidon", "r": "BiS 2" }
+        { "name": "Radiant Plume", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
+      "altTrinkets": ["Solarflare Prism", "Algethar Puzzle Box"]
     },
     {
       "class": "Rogue", "spec": "Outlaw", "role": "Melee DPS", "armor": "Leather",
@@ -549,9 +555,9 @@
       "altWeapon": { "name": "Raid 1H Swords (Voidspire)", "id": null },
       "trinkets": [
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Heart of Wind", "r": "BiS 2" }
+        { "name": "Umbral Plume", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Light Company Guidon", "Algethar Puzzle Box"]
+      "altTrinkets": ["Solarflare Prism", "Heart of Wind"]
     },
     {
       "class": "Rogue", "spec": "Subtlety", "role": "Melee DPS", "armor": "Leather",
@@ -565,7 +571,7 @@
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
         { "name": "Light Company Guidon", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
+      "altTrinkets": ["Radiant Plume", "Algethar Puzzle Box"]
     },
     {
       "class": "Shaman", "spec": "Elemental", "role": "Ranged DPS", "armor": "Mail",
@@ -579,7 +585,7 @@
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
         { "name": "Algethar Puzzle Box", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Heart of Wind", "Volatile Void Suffuser"]
+      "altTrinkets": ["Heart of Wind", "Locus-Walker's Ribbon"]
     },
     {
       "class": "Shaman", "spec": "Enhancement", "role": "Melee DPS", "armor": "Mail",
@@ -590,10 +596,10 @@
       "bisWeapon": { "name": "Crafted 1H Weapons w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Raid 1H Weapons (Voidspire)", "id": null },
       "trinkets": [
-        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Heart of Wind", "r": "BiS 2" }
+        { "name": "Algethar Puzzle Box", "r": "BiS 1" },
+        { "name": "Gaze of the Alnseer", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Light Company Guidon", "Algethar Puzzle Box"]
+      "altTrinkets": ["Emberwing Feather", "Heart of Wind"]
     },
     {
       "class": "Shaman", "spec": "Restoration", "role": "Healer", "armor": "Mail",
@@ -604,10 +610,10 @@
       "bisWeapon": { "name": "Crafted 1H+Shield w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Raid 1H+Shield (Voidspire)", "id": null },
       "trinkets": [
-        { "name": "Volatile Void Suffuser", "r": "BiS 1" },
-        { "name": "Heart of Wind", "r": "BiS 2" }
+        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
+        { "name": "Locus-Walker's Ribbon", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Mark of Light", "Sapling of the Dawnroot"]
+      "altTrinkets": ["Volatile Void Suffuser", "Heart of Wind"]
     },
     {
       "class": "Warlock", "spec": "Affliction", "role": "Ranged DPS", "armor": "Cloth",
@@ -618,10 +624,10 @@
       "bisWeapon": { "name": "Crafted 2H Staff w/ Darkmoon Sigil: Hunt", "id": null },
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
-        { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
+        { "name": "Vaelgor's Final Stare", "r": "BiS 1" },
+        { "name": "Gaze of the Alnseer", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Heart of Wind", "Volatile Void Suffuser"]
+      "altTrinkets": ["Locus-Walker's Ribbon", "Heart of Wind"]
     },
     {
       "class": "Warlock", "spec": "Demonology", "role": "Ranged DPS", "armor": "Cloth",
@@ -635,7 +641,7 @@
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
         { "name": "Heart of Wind", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Algethar Puzzle Box", "Volatile Void Suffuser"]
+      "altTrinkets": ["Locus-Walker's Ribbon", "Algethar Puzzle Box"]
     },
     {
       "class": "Warlock", "spec": "Destruction", "role": "Ranged DPS", "armor": "Cloth",
@@ -647,9 +653,9 @@
       "altWeapon": { "name": "Raid Staff (Voidspire)", "id": null },
       "trinkets": [
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Algethar Puzzle Box", "r": "BiS 2" }
+        { "name": "Vaelgor's Final Stare", "r": "BiS 2" }
       ],
-      "altTrinkets": ["Heart of Wind", "Volatile Void Suffuser"]
+      "altTrinkets": ["Heart of Wind", "Vessel of Tortured Souls"]
     },
     {
       "class": "Warrior", "spec": "Arms", "role": "Melee DPS", "armor": "Plate",
@@ -661,7 +667,7 @@
       "altWeapon": { "name": "Bellamy's Final Judgement", "id": 249277 },
       "trinkets": [
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Light Company Guidon", "r": "BiS 2" }
+        { "name": "Umbral Plume", "r": "BiS 2" }
       ],
       "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
     },
@@ -675,7 +681,7 @@
       "altWeapon": { "name": "Raid 2H Weapons (Voidspire)", "id": null },
       "trinkets": [
         { "name": "Gaze of the Alnseer", "r": "BiS 1" },
-        { "name": "Light Company Guidon", "r": "BiS 2" }
+        { "name": "Umbral Plume", "r": "BiS 2" }
       ],
       "altTrinkets": ["Heart of Wind", "Algethar Puzzle Box"]
     },
